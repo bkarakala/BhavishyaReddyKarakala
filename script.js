@@ -146,3 +146,20 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = mailtoLink;
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-right");
+
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+
+    // Close menu when clicking on a link (for better UX)
+    document.querySelectorAll(".nav-right li a").forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+});
