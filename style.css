@@ -1005,8 +1005,51 @@ footer {
         align-items: center;
     }
 
+
     .contact-info,
     .contact-form {
         width: 100%;
+    }
+}
+
+/* 📱 Mobile Fixes */
+@media (max-width: 768px) {
+    /* 🔹 Hero Section */
+    .hero-description {
+        font-size: 16px; /* Reduce text size */
+        text-align: center;
+        padding: 0 20px; /* Add padding to prevent text overflow */
+    }
+
+    /* 🔹 Navbar Adjustments */
+    .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-right li {
+        margin: 10px 0; /* Adds spacing between menu items */
+    }
+
+    /* 🔹 Buttons Fix */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons */
+        gap: 10px;
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%; /* Make buttons responsive */
+        max-width: 300px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* 🔹 Reduce Margin and Spacing */
+    .hero-title {
+        font-size: 32px; /* Smaller title */
+        text-align: center;
     }
 }
