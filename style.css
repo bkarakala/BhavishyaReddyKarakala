@@ -1,0 +1,1012 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
+/* Global Styles */
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF; /* White Background for High Contrast */
+    color: #000000; /* Black Text for High Contrast */
+    animation: fadeInBody 1.5s ease-in-out;
+}
+
+/* Background Image ONLY for Home Page */
+.home-bg {
+    background: url('images/background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    animation: moveBg 10s infinite alternate ease-in-out;
+}
+
+@keyframes moveBg {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+
+/* Navigation Bar */
+header {
+    background: #000000; /* Black Navbar remains for high contrast */
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Left (Profile Image & Name) */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navbar Right (Navigation Links) */
+.nav-right {
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+    gap: 35px;
+}
+
+/* Navbar Links */
+.nav-right li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Fix Contact Visibility */
+.nav-right li:last-child a {
+    padding-right: 50px;
+}
+
+/* Active Link */
+.nav-right li a.active {
+    color: seagreen; /* Sea Green Accent */
+    font-weight: bold;
+    border-bottom: 3px solid seagreen;
+}
+
+/* Hover Effect */
+.nav-right li a:hover {
+    color: seagreen;
+}
+/* 🌟 Hero Section Styling */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 10%;
+}
+/* 🏆 Welcome Title */
+.hero-title {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block; /* Ensures proper rendering */
+    margin-bottom: 15px;
+    position: relative; /* Allows pseudo-elements if needed */
+
+    /* 🔥 Sky Blue Gradient Text Effect */
+    background: linear-gradient(90deg, #f6ff00,#f6ff00);  /* Sky Blue Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* ✨ Text Shadow for Extra Glow */
+    text-shadow: 4px 4px 15px rgba(0, 170, 255, 0.6);
+}
+
+/* 🔄 Fallback for Browsers That Don't Support Gradient Text */
+@supports not (-webkit-background-clip: text) {
+    .hero-title {
+        color: #ee00ff; /* Sky Blue Fallback */
+    }
+}
+
+/* 🎬 Smooth Fade-in Animation */
+.hero-title {
+    animation: fadeIn 1.2s ease-in-out, textGlow 1.5s infinite alternate ease-in-out;
+}
+
+/* 💡 Keyframe Animation for Fading Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✨ Keyframe Animation for Glowing Text Effect */
+@keyframes textGlow {
+    from {
+        text-shadow: 2px 2px 10px rgba(0, 170, 255, 0.5);
+    }
+    to {
+        text-shadow: 4px 4px 20px rgba(0, 153, 255, 0.7);
+    }
+}
+
+/* 🎬 Add a Simple Animation Effect */
+.hero-title {
+    animation: fadeIn 1.2s ease-in-out, textGlow 1.5s infinite alternate ease-in-out;
+}
+
+/* 💡 Keyframe Animation for Fading Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✨ Keyframe Animation for Glowing Text Effect */
+@keyframes textGlow {
+    from {
+        text-shadow: 2px 2px 10px rgba(0, 123, 255, 0.5);
+    }
+    to {
+        text-shadow: 4px 4px 20px rgba(0, 86, 179, 0.7);
+    }
+}
+
+/* 📜 Hero Description */
+.hero-description {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #fe08f2; /* Dodger Blue for high contrast */
+    text-shadow: 1px 1px 5px rgba(30, 144, 255, 0.3);
+}
+
+/* 🔹 Highlighted Keywords */
+.hero-description strong {
+    color: #fe08f2; /* Deep Sky Blue */
+    font-weight: bold;
+}
+
+
+
+/* 🚀 Button Styling */
+.btn {
+    display: inline-block;
+    background: #ff9d00; /* Tomato Red */
+    color: white;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 71, 249, 0.3);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #ff9d00;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px rgba(255, 71, 249, 0.3);
+    transform: scale(1.05);
+}
+
+
+/* 🎨 Updated Resume Button */
+.btn-secondary {
+    background: #ff9d00; /* Same as Projects Button */
+}
+
+.btn-secondary:hover {
+    background:#ff9d00;
+}
+
+/* 🔄 Fade-In Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+
+
+
+/* ACTIVE MENU ITEM */
+.nav-right li a.active {
+    color: seagreen;
+    border-bottom: 3px solid seagreen;
+}
+
+/* About Section */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+    background: #FFFFFF;
+    animation: fadeInContent 1.5s ease-in-out;
+}
+
+.about h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.about-text {
+    width: 55%;
+    text-align: left;
+}
+
+.skills-container {
+    width: 40%;
+}
+
+/* Flexbox Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skills-container {
+    width: 40%;
+}
+
+/* 🎨 Flexbox Grid for Skills */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* 🚀 Initial Hidden State */
+.skills-grid span {
+    background: black;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(30px) scale(0.5);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* 🎬 Pop In Effect */
+.skills-grid span.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* 🔄 Pop Out Effect (Smooth Disappearance) */
+.skills-grid span.hide {
+    opacity: 0;
+    transform: translateY(30px) scale(0.5);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+/* 🔥 EXPERIENCE SECTION STYLING */
+.experience {
+    padding: 80px 10%;
+    background: #f8f9fa;
+    position: relative;
+    text-align: center;
+}
+
+/* 🌟 Experience Title */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #ff4500; /* Accent color */
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 🌟 Experience Section */
+.experience {
+    padding: 80px 10%;
+    background: #f8f9fa;
+    text-align: center;
+    position: relative;
+}
+
+/* 🔥 Title Styling */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: #ff4500;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 💼 Experience Container */
+.experience-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* 📌 Experience Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    border-left: 5px solid transparent; /* Start with no accent */
+}
+
+/* 🚀 Card Appears on Scroll */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🏆 Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #ff4500; /* Orange left accent grows */
+}
+
+/* 🏷️ Job Header */
+.job-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* 📌 Job Title */
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* 🔥 Job Title Color Change on Hover */
+.card:hover .job-title {
+    color: #ff4500;
+}
+
+/* 🗓️ Job Date */
+.job-date {
+    font-size: 14px;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+/* ✅ Job Description */
+.job-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* 📌 Bullet Points Animation */
+.job-description li {
+    padding: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* ✨ Animate Bullet Points on Scroll */
+.card.show .job-description li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 📌 Bullet Points (•) */
+.job-description li::before {
+    content: "•"; /* Bullet point */
+    position: absolute;
+    left: 5px;
+    color: black; /* Change color as needed */
+    font-size: 20px; /* Adjust size */
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* ✨ Animate Bullet Points One-by-One */
+.card.show .job-description li::before {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.2s;
+}
+
+
+
+/* 🔄 Animation Keyframes */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 1024px) {
+    .experience-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* 🌍 Ensure full height layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 📌 Ensure main content expands */
+.main-content {
+    flex: 1;  
+    padding-bottom: 40px; /* 🔥 Add some space at the bottom */
+}
+
+/* 🏁 Footer - Moves Down */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;  /* Increased padding for better spacing */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 40px;  /* 🔥 Pushes the footer down */
+}
+
+
+
+
+.projects h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    background: seagreen; /* Sea Green Accent */
+    color: white;
+}
+
+
+
+/* 📌 Footer Fix */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Ensures content pushes the footer down */
+}
+
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    position: relative; /* Default, will work if content is taller */
+    bottom: 0;
+}
+
+
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative; /* Ensure it stays within the page */
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: seagreen;
+}
+
+/* Animations */
+@keyframes fadeInBody {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInExperience {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}/* 🌟 Contact Section */
+.contact {
+    padding: 80px 10%;
+    background: white;
+    animation: fadeInContent 1.5s ease-in-out;
+    text-align: center;
+}
+
+/* 📌 Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* 📩 Contact Info */
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 📨 Contact Icons */
+
+
+/* 📌 Contact Icons */
+.contact-info i {
+    font-size: 20px;
+    color: seagreen; /* Green Color */
+    margin-right: 8px;
+}
+
+/* 📩 Email & LinkedIn Link Styling */
+.contact-info a {
+    color: seagreen;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* 📜 Contact Text Alignment */
+.contact-info p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    font-size: 20px;
+    color: seagreen; /* Green Theme */
+}
+
+/* 🔗 Contact Links */
+.contact-info a {
+    color: seagreen; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* 📝 Contact Form */
+.contact-form {
+    flex: 1;
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInForm 1.5s ease-in-out;
+}
+
+/* 🖋️ Form Inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid seagreen;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: forestgreen; 
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3); 
+}
+
+/* ✉️ Send Message Button */
+.btn-send {
+    display: inline-block;
+    background: seagreen;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-send:hover {
+    transform: scale(1.05);
+    background: forestgreen; 
+}
+
+
+/* Form Inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid seagreen; /* Sea Green Accent */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: forestgreen; /* Darker Sea Green */
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3); /* Sea Green Shadow */
+}
+
+/* Send Message Button */
+
+
+
+.btn-send {
+    display: inline-block;
+    background: seagreen; /* Sea Green Accent */
+    color: white;
+    padding: 12px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-send:hover {
+    transform: scale(1.05);
+    background: forestgreen; /* Darker Sea Green */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* 🎯 Contact Section Layout */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;  /* Space between sections */
+    padding: 50px 10%;
+}
+
+/* 📩 Contact Info Styling */
+.contact-info {
+    flex: 1;  /* Takes half the space */
+    text-align: left;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 📨 Icons Styling */
+.contact-info i {
+    font-size: 20px;
+    color: seagreen;
+}
+
+/* 🔗 Contact Links */
+.contact-info a {
+    color: seagreen;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* 📩 Contact Form Styling */
+.contact-form {
+    flex: 1;  /* Takes half the space */
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInForm 1.5s ease-in-out;
+}
+
+/* 📝 Form Inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid seagreen;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: forestgreen;
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+}
+
+/* ✉️ Send Message Button */
+.btn-send {
+    display: inline-block;
+    background: seagreen;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-send:hover {
+    transform: scale(1.05);
+    background: forestgreen;
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
