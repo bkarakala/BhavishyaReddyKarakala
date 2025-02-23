@@ -996,33 +996,231 @@ footer {
 .btn-send:hover {
     transform: scale(1.05);
     background: forestgreen;
+}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* 🎨 Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+    color: #000000;
+    animation: fadeInBody 1.5s ease-in-out;
 }
 
-/* 📱 Responsive Fix */
-@media (max-width: 1024px) {
+/* 🌟 Navbar Styling */
+header {
+    background: #000;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Mobile Navbar */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* 🌍 Navbar Right */
+.nav-right {
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+    gap: 35px;
+}
+
+/* 📱 Mobile Navbar */
+@media (max-width: 768px) {
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: black;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-right.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* 🌟 Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+/* 🎬 Hero Title */
+.hero-title {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #007BFF, #004080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 15px rgba(0, 170, 255, 0.6);
+}
+
+/* 📜 Hero Description */
+.hero-description {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #FFA500;
+}
+
+/* 🎯 Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 🚀 Buttons */
+.btn {
+    display: inline-block;
+    background: #FF8C00;
+    color: white;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 71, 249, 0.3);
+}
+
+/* 📱 Mobile Hero Fix */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 50px 10%;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* 🔥 Experience Section */
+.experience {
+    padding: 80px 10%;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+/* 📌 Experience Container */
+.experience-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* 💼 Experience Cards */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* 📱 Mobile Experience Fix */
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 📜 Contact Section */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 50px 10%;
+}
+
+/* 📌 Contact Form */
+.contact-form {
+    flex: 1;
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Mobile Contact Fix */
+@media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
         align-items: center;
     }
 
-
     .contact-info,
-
     .contact-form {
         width: 100%;
     }
-}/* 📱 Adjust Background & Spacing */
+}
+
+/* 🏁 Footer */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 40px;
+}
+
+/* 📱 Mobile Footer Fix */
 @media (max-width: 768px) {
-    .hero {
-        padding-top: 100px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .hero-content {
-        padding: 20px;
-    }
-
     .footer {
         font-size: 14px;
         text-align: center;
