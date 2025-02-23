@@ -1007,39 +1007,25 @@ footer {
 
 
     .contact-info,
+
     .contact-form {
         width: 100%;
     }
-}
-
-/* 📱 Mobile Navigation Fix */
+}/* 📱 Adjust Background & Spacing */
 @media (max-width: 768px) {
-    .nav-right {
-        position: absolute;
-        top: 60px; /* Adjust based on header size */
-        left: 0;
-        width: 100%;
-        background: black; /* Ensure it's visible */
-        display: none;
-        flex-direction: column;
+    .hero {
+        padding-top: 100px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .footer {
+        font-size: 14px;
         text-align: center;
-        padding: 20px 0;
-        z-index: 1000;
-    }
-
-    .nav-right.active {
-        display: flex;
-    }
-
-    .nav-right li {
-        margin: 10px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        color: white;
+        padding: 10px 15px;
     }
 }
-
