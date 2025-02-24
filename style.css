@@ -644,7 +644,7 @@ footer {
 @media (max-width: 768px) {
     .home-bg {
         background: url('images/background.jpg') no-repeat center center/cover;
-        animation: moveBg 8s infinite alternate ease-in-out;
+        animation: moveBg 3s infinite alternate ease-in-out;
         background-size: cover;
     }
 
@@ -656,8 +656,7 @@ footer {
 
 
 
-/* 📌 Footer Adjustments for Smaller Screens */
-@media (max-width: 768px) {
+/* 📌 Footer Adjustments for Smaller Screens */@media (max-width: 768px) {
     .home-page {
         display: flex;
         flex-direction: column;
@@ -665,7 +664,7 @@ footer {
     }
 
     .hero {
-        flex-grow: 1; /* Takes up remaining space */
+        flex-grow: 1; /* Expands hero section to fill space */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -680,11 +679,10 @@ footer {
         text-align: center;
         padding: 20px 10px;
         width: 100%;
-        position: relative; /* Instead of absolute */
+        position: relative;
+        margin-top: auto; /* Pushes footer to bottom */
     }
 }
-
-
 
 /* 🎨 Projects Section */
 .projects h1 {
