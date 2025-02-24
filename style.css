@@ -41,15 +41,17 @@ header {
 /* 📱 Mobile Navbar Adjustments */
 @media (max-width: 768px) {
     .nav-right {
-        flex-direction: row; /* Ensure links are in a horizontal line */
-        justify-content: center; /* Center align the items */
+        flex-direction: row; /* Set to horizontal line */
+        justify-content: space-between; /* Distribute items evenly */
         flex-wrap: nowrap; /* Prevent wrapping */
-        gap: 20px; /* Add spacing between links */
+        gap: 20px; /* Space between links */
+        width: 100%; /* Allow full width usage */
     }
 
     header {
-        padding: 12px 20px; /* Smaller padding for mobile */
-        flex-direction: row; /* Maintain horizontal structure */
+        padding: 12px 10px; /* Smaller padding for mobile */
+        flex-direction: column; /* Column for smaller view */
+        align-items: stretch; /* Stretch items */
     }
 
     .hero-title {
