@@ -95,45 +95,79 @@ header {
     color: seagreen;
 }
 
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: black;
+    padding: 50px 20px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 1200;
+}
+
+.mobile-menu.open {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.mobile-menu a:hover {
+    background: seagreen;
+    border-radius: 5px;
+}
+
+.close-btn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
 /* 📱 Mobile Navbar Adjustments */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack name with picture on top */
-        align-items: center; /* Center align content */
-        padding: 12px 20px; /* Responsive padding */
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 20px;
     }
 
     .nav-left {
-        margin-bottom: 10px; /* Space between the name and nav items */
-        display: flex; /* Ensure it remains a flex container */
-        align-items: center; /* Center items vertically */
-    }
-
-    .profile-pic {
-        width: 45px; /* Keep profile picture consistent */
-        height: 45px;
-        border-radius: 50%; /* Keeping it circular */
-        margin-right: 12px; /* Space between pic and name */
-    }
-
-    .logo-text {
-        font-size: 20px; /* Keep the font size for the name */
-        color: white;
-        font-weight: bold; /* Optionally bold */
+        margin-bottom: 0;
     }
 
     .nav-right {
-        justify-content: center; /* Center the nav items */
-        gap: 20px; /* Space between nav items */
-        display: flex; /* Ensure nav items are horizontally aligned */
-        width: 100%; /* Set to 100% for full width */
-        margin-top: 10px; /* Add space above navigation */
+        display: none;
     }
 
-    /* Ensure the navbar items do not wrap */
-    .nav-right li {
-        flex: 1; /* Flex one item to share the space */
-        text-align: center; /* Center the text in each nav item */
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
     }
 }
 
@@ -156,12 +190,12 @@ header {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    display: inline-block; /* Ensures proper rendering */
+    display: inline-block;
     margin-bottom: 20px;
-    position: relative; /* Allows pseudo-elements if needed */
+    position: relative;
     
     /* 🔥 Gradient Text Effect */
-    background: linear-gradient(90deg, #ffa600, #ffa600);  /* Sky Blue Gradient */
+    background: linear-gradient(90deg, #ffa600, #ffa600);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -173,7 +207,7 @@ header {
 /* 🔄 Fallback for Browsers That Don't Support Gradient Text */
 @supports not (-webkit-background-clip: text) {
     .hero-title {
-        color: #b3ff00; /* Solid Sky Blue Fallback */
+        color: #b3ff00;
     }
 }
 
@@ -207,13 +241,12 @@ header {
 /* 📱 Responsive Fix for Mobile */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 36px; /* Reduce font size for mobile */
+        font-size: 36px;
         text-align: center;
         line-height: 1.2;
-        margin-top: 20px; /* Add spacing from the top */
+        margin-top: 20px;
     }
     
-    /* Adjust Shadow for Mobile */
     @keyframes textGlow {
         from {
             text-shadow: 1px 1px 8px rgba(0, 123, 255, 0.5);
@@ -231,21 +264,21 @@ header {
     font-weight: 400;
     line-height: 1.8;
     margin-bottom: 25px;
-    color: #fe08cd; /* Dodger Blue for high contrast */
+    color: #fe08cd;
     text-shadow: 1px 1px 5px rgba(30, 144, 255, 0.3);
-    text-align: center; /* Ensures alignment on all screens */
+    text-align: center;
 }
 
 /* 🔹 Highlighted Keywords */
 .hero-description strong {
-    color: #fe08cd; /* Deep Sky Blue */
+    color: #fe08cd;
     font-weight: bold;
 }
 
 /* 📱 Responsive Fix for Mobile */
 @media (max-width: 768px) {
     .hero-description {
-        font-size: 16px; /* Slightly smaller font for mobile */
+        font-size: 16px;
         line-height: 1.4;
         padding: 0 5%;
         text-align: center;
@@ -255,7 +288,7 @@ header {
 /* 🚀 Button Styling */
 .btn {
     display: inline-block;
-    background: #2b00ff; /* Tomato Red */
+    background: #2b00ff;
     color: white;
     padding: 14px 24px;
     font-size: 18px;
@@ -275,7 +308,7 @@ header {
 
 /* 🎨 Updated Resume Button */
 .btn-secondary {
-    background: #2b00ff; /* Same as Projects Button */
+    background: #2b00ff;
 }
 
 .btn-secondary:hover {
@@ -285,29 +318,28 @@ header {
 /* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
     .hero {
-        padding: 20px; /* Add padding for mobile */
-        text-align: center; /* Center text for mobile */
+        padding: 20px;
+        text-align: center;
     }
 
     .hero-title {
-        font-size: 36px; /* Adjusted for mobile */
+        font-size: 36px;
     }
 
     .hero-buttons {
         display: flex;
         flex-direction: column;
-        gap: 25px; /* Increase space between buttons */
+        gap: 25px;
         align-items: center;
         width: 100%;
     }
     
     .btn {
-        width: 85%; /* Ensure consistent button width */
+        width: 85%;
         padding: 14px;
         font-size: 18px;
         text-align: center;
     }
-    
 }
 
 /* 🔄 Fade-In Animation */
@@ -328,7 +360,7 @@ header {
     text-align: center;
     background: #FFFFFF;
     animation: fadeInContent 1.5s ease-in-out;
-    margin-top: 80px; /* Prevent overlap with fixed navbar */
+    margin-top: 80px;
 }
 
 .about h1 {
@@ -398,7 +430,7 @@ header {
 @media (max-width: 768px) {
     .about {
         padding: 60px 5%;
-        margin-top: 80px; /* Prevent overlap with fixed navbar */
+        margin-top: 80px;
     }
 
     .about-container {
@@ -410,7 +442,7 @@ header {
 
     .about-text {
         width: 100%;
-        text-align: center; /* Center align on mobile */
+        text-align: center;
         font-size: 16px;
     }
 
@@ -434,7 +466,7 @@ header {
     background: #f8f9fa;
     text-align: center;
     position: relative;
-    margin-top: 80px; /* Prevent overlap with fixed navbar */
+    margin-top: 80px;
 }
 
 /* 🔥 Experience Title */
@@ -574,7 +606,7 @@ header {
 @media (max-width: 768px) {
     .experience {
         padding: 60px 5%;
-        margin-top: 80px; /* Prevent overlap with fixed navbar */
+        margin-top: 80px;
     }
 
     .experience-container {
@@ -584,7 +616,7 @@ header {
     }
 
     .card {
-        width: 90%; /* Wider card for mobile */
+        width: 90%;
         padding: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
@@ -620,7 +652,7 @@ html, body {
 /* 📌 Ensure main content expands */
 .main-content {
     flex: 1;  
-    padding-bottom: 40px; /* 🔥 Add some space at the bottom */
+    padding-bottom: 40px;
 }
 
 /* 🏁 Footer - Stays at the Bottom */
@@ -680,7 +712,7 @@ footer {
 /* 🖱️ Hover Effect */
 .project:hover {
     transform: scale(1.05);
-    background: seagreen; /* Sea Green Accent */
+    background: seagreen;
     color: white;
 }
 
@@ -750,7 +782,7 @@ html, body {
     }
 
     .project {
-        width: 90%; /* Full width for project cards */
+        width: 90%;
     }
 
     .footer-content {
@@ -765,7 +797,7 @@ html, body {
     background: white;
     animation: fadeInContent 1.5s ease-in-out;
     text-align: center;
-    margin-top: 80px; /* Prevent overlap with fixed navbar */
+    margin-top: 80px;
 }
 
 /* 📌 Contact Container */
@@ -897,7 +929,7 @@ html, body {
     }
 
     .contact-info {
-        text-align: center; /* Center align on mobile */
+        text-align: center;
     }
 
     .contact-form {
@@ -915,13 +947,13 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 40px;  /* Space between sections */
+    gap: 40px;
     padding: 50px 10%;
 }
 
 /* 📩 Contact Info Styling */
 .contact-info {
-    flex: 1;  /* Takes half the space */
+    flex: 1;
     text-align: left;
 }
 
@@ -957,7 +989,7 @@ html, body {
 
 /* 📩 Contact Form Styling */
 .contact-form {
-    flex: 1;  /* Takes half the space */
+    flex: 1;
     background: #FFFFFF;
     padding: 25px;
     border-radius: 10px;
@@ -1015,16 +1047,7 @@ html, body {
     background: forestgreen;
 }
 
-
-.close-btn {
-    font-size: 30px;
-    color: white;
-    text-align: right;
-    cursor: pointer;
-    display: block;
-    padding: 10px;
-    margin-bottom: 10px;
-}/* 🍔 Hide Mobile Menu by Default *//* 🍔 Mobile Menu */
+/* 🍔 Mobile Menu */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -1039,24 +1062,12 @@ html, body {
     z-index: 1200;
 }
 
-/* ✅ Show menu when toggled */
 .mobile-menu.open {
     right: 0;
     display: flex;
     flex-direction: column;
 }
 
-/* ❌ Close Button */
-.close-btn {
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 20px; /* Move X to left inside menu */
-}
-
-/* 📱 Mobile Menu Links */
 .mobile-menu a {
     color: white;
     text-decoration: none;
@@ -1070,178 +1081,6 @@ html, body {
     border-radius: 5px;
 }
 
-/* ✅ Ensure Desktop Navbar Always Visible */
-@media (min-width: 769px) {
-    .mobile-menu {
-        display: none !important;
-    }
-}
-
-
-
-/* 📱 Mobile Navigation - Make Hamburger Menu Work */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Ensure the hamburger is visible */
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 1500;
-    }
-
-    /* Hide Desktop Nav on Mobile */
-    .nav-right {
-        display: none;
-    }
-
-    /* 📱 Mobile Menu */
-    .mobile-menu {
-        display: none; /* Hidden by default */
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: black;
-        text-align: center;
-        z-index: 1200;
-        padding-top: 60px;
-    }
-
-    .mobile-menu.open {
-        display: flex;
-    }
-
-    .mobile-menu a {
-        color: white;
-        font-size: 20px;
-        padding: 15px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .mobile-menu a:hover {
-        background: #222;
-    }
-
-    /* Close Button */
-    .close-btn {
-        font-size: 30px;
-        color: white;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        cursor: pointer;
-    }
-}
-
-
-/* 🌟 General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #FFFFFF;
-    color: #000000;
-}
-
-/* 📌 Header */
-header {
-    background: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-/* 🔗 Logo & Profile Pic */
-.nav-left {
-    display: flex;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 12px;
-}
-
-.logo-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
-
-/* 📌 Desktop Navigation */
-.nav-right {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-right li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out;
-}
-
-/* ✅ Active Link Styling */
-.nav-right li a.active {
-    color: seagreen;
-    border-bottom: 3px solid seagreen;
-}
-
-/* 🔥 Hover Effect */
-.nav-right li a:hover {
-    color: seagreen;
-}
-
-/* 🍔 Mobile Menu */
-.hamburger {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    z-index: 1500;
-}
-
-/* ❌ Mobile Menu (Hidden by Default) */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 250px;
-    height: 100vh;
-    background: black;
-    padding: 50px 20px;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
-    transition: right 0.3s ease-in-out;
-    z-index: 1200;
-}
-
-/* ✅ Show menu when toggled */
-.mobile-menu.open {
-    right: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ❌ Close Button */
 .close-btn {
     font-size: 30px;
     color: white;
@@ -1251,44 +1090,9 @@ header {
     left: 20px;
 }
 
-/* 📱 Mobile Menu Links */
-.mobile-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    text-align: center;
-}
-
-.mobile-menu a:hover {
-    background: seagreen;
-    border-radius: 5px;
-}
-
-/* ✅ Responsive Adjustments */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-    }
-
-    .nav-right {
-        display: none;
-    }
-
+/* ✅ Ensure Desktop Navbar Always Visible */
+@media (min-width: 769px) {
     .mobile-menu {
-        text-align: center;
-        padding-top: 60px;
-    }
-
-    .mobile-menu a {
-        font-size: 20px;
-        padding: 15px;
-    }
-
-    .mobile-menu a:hover {
-        background: #222;
+        display: none !important;
     }
 }
