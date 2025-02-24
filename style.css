@@ -640,16 +640,33 @@ footer {
     bottom: 0;
     margin-top: 40px;
 }
+
 @media (max-width: 768px) {
+    .home-bg {
+        background: url('images/background.jpg') no-repeat center center/cover;
+        animation: moveBg 8s infinite alternate ease-in-out;
+        background-size: cover;
+    }
+
+    @keyframes moveBg {
+        0% { background-position-y: 0px; }
+        100% { background-position-y: 50px; } /* Adjust to move more */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ensure the Home Page Fills the Entire Screen */
     .home-page {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        overflow: hidden; /* Prevents white space from appearing */
+        overflow: hidden; /* Prevent white space */
+        position: relative; /* Ensures content aligns well */
     }
 
+    /* Fix Hero Section to Fill Available Space */
     .hero {
-        flex-grow: 1;
+        flex-grow: 1; /* Expands hero section */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -658,18 +675,25 @@ footer {
         padding: 20px;
     }
 
+    /* Fix Background Image with Smooth Movement */
     .home-bg {
         background: url('images/background.jpg') no-repeat center center/cover;
         animation: moveBg 8s infinite alternate ease-in-out;
         background-size: cover;
-        position: absolute;
+        position: fixed; /* Keep it behind content */
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        z-index: -1; /* Ensures it stays behind content */
+        height: 100vh; /* Full viewport height */
+        z-index: -1; /* Push behind everything */
     }
 
+    @keyframes moveBg {
+        0% { background-position-y: 0px; }
+        100% { background-position-y: 50px; } /* Moves image up/down */
+    }
+
+    /* Ensure Footer Stays Attached to the Bottom */
     footer {
         background: #000;
         color: white;
@@ -680,6 +704,7 @@ footer {
         margin-top: auto; /* Pushes footer to the bottom */
     }
 }
+
 
 /* 🎨 Projects Section */
 .projects h1 {
