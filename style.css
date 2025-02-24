@@ -659,8 +659,8 @@ footer {
 /* 📌 Footer Adjustments for Smaller Screens */
 
 
+/* 🌟 Ensure Full-Screen Layout */
 @media (max-width: 768px) {
-    /* 🌟 Ensure Full-Screen Layout */
     .home-page {
         display: flex;
         flex-direction: column;
@@ -668,7 +668,7 @@ footer {
         position: relative; /* Ensures proper layout */
     }
 
-    /* 🌟 Hero Section Fix */
+    /* 🌟 Fix Hero Section */
     .hero {
         flex-grow: 1; /* Expands hero section */
         display: flex;
@@ -697,7 +697,7 @@ footer {
         100% { background-position-y: 50px; } /* Moves image up/down */
     }
 
-    /* 🌟 Footer Fix - Attach to Bottom */
+    /* 🌟 Fix Footer - Attach to Bottom */
     footer {
         background: #000;
         color: white;
@@ -707,7 +707,30 @@ footer {
         position: relative;
         margin-top: auto; /* Pushes footer to the bottom */
     }
+} /* ✅ Make sure this closing bracket exists */
+@media (max-width: 768px) {
+    /* 🌟 Ensure Full-Screen Layout */
+    .home-page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        position: relative; /* Ensures proper layout */
+    }
 }
+
+    /* 🌟 Hero Section Fix */
+    .hero {
+        flex-grow: 1; /* Expands hero section */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+
+
 
 
 /* 🎨 Projects Section */
