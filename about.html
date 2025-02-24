@@ -29,11 +29,11 @@
         <!-- 📱 Mobile Navigation Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <span class="close-btn" onclick="toggleMenu()">✖</span>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="experience.html">Experience</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" onclick="navigateAndCloseMenu()">Home</a>
+            <a href="about.html" onclick="navigateAndCloseMenu()">About</a>
+            <a href="projects.html" onclick="navigateAndCloseMenu()">Projects</a>
+            <a href="experience.html" onclick="navigateAndCloseMenu()">Experience</a>
+            <a href="contact.html" onclick="navigateAndCloseMenu()">Contact</a>
         </div>
     </header>
 
@@ -77,15 +77,17 @@
         </div>
     </section>
 
-
-
     <script>
         function toggleMenu() {
             var menu = document.getElementById("mobile-menu");
             menu.classList.toggle("open");
         }
+
+        function navigateAndCloseMenu() {
+            // Close the menu
+            toggleMenu();
+        }
     </script>
-    
 
     <!-- ✅ Fixed Footer -->
     <footer>
@@ -100,6 +102,5 @@
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
