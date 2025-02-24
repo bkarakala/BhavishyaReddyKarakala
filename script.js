@@ -121,3 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", adjustFooter);
     adjustFooter(); // Run on page load
 });
+
+
+
+function toggleMenu() {
+    const menu = document.querySelector(".mobile-menu");
+    menu.classList.toggle("open");
+}
