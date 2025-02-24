@@ -173,3 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
         navMenu.classList.toggle("active");
     });
 });
+
+
+document.getElementById("hamburger").addEventListener("click", function() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+});

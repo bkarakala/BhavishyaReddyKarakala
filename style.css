@@ -1010,3 +1010,58 @@ html, body {
     transform: scale(1.05);
     background: forestgreen;
 }
+
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack the lines */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Hamburger Lines */
+.hamburger .line {
+    height: 3px; /* Height of the hamburger lines */
+    width: 30px; /* Width of the lines */
+    background-color: white; /* Color of lines */
+    margin: 4px 0; /* Space between lines */
+}
+
+/* 📱 Mobile Navbar Adjustments */
+@media (max-width: 768px) {
+    .nav-right {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position below the navbar */
+        top: 55px; /* Position just below the header */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Add background for visibility */
+        z-index: 999; /* Ensure it shows above other content */
+    }
+
+    .nav-right.active {
+        display: flex; /* Show links when activated */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+    
+    header {
+        flex-direction: row; /* Keep alignment */
+        justify-content: space-between; /* Space between logo and menu */
+        padding: 12px 20px; /* Padding for responsive */
+    }
+
+    .nav-left {
+        margin-bottom: 0; /* Reset margin */
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Footer adjustments */
+footer {
+    margin-top: 0; /* Remove margin from header, use padding */
+}
