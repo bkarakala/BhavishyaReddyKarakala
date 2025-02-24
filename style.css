@@ -641,7 +641,36 @@ footer {
     margin-top: 40px;
 }
 
+@media (max-width: 768px) {
+    @keyframes moveBg {
+        0% { background-position: center top; }
+        100% { background-position: center bottom; }
+    }
+
+    .home-page {
+        background: url('images/background.jpg') no-repeat center center/cover;
+        animation: moveBg 10s infinite alternate ease-in-out;
+        background-size: cover;
+    }
+}
+
+
+
 /* 📌 Footer Adjustments for Smaller Screens */
+
+@media (max-width: 768px) {
+    .home-page footer {
+        background: #000;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
 @media (max-width: 768px) {
     footer {
         padding: 15px;
