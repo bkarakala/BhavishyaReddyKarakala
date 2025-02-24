@@ -642,29 +642,33 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .home-bg {
-        background: url('images/background.jpg') no-repeat center center/cover;
-        animation: moveBg 8s infinite alternate ease-in-out;
-        background-size: cover;
+    @keyframes moveBg {
+        0% { background-position: center top; }
+        100% { background-position: center bottom; }
     }
 
-    @keyframes moveBg {
-        0% { background-position-y: 0px; }
-        100% { background-position-y: 50px; } /* Adjust to move more */
+    .home-page {
+        background: url('images/background.jpg') no-repeat center center/cover;
+        animation: moveBg 10s infinite alternate ease-in-out;
+        background-size: cover;
     }
 }
 
+
+
+/* 📌 Footer Adjustments for Smaller Screens */
+
+
 @media (max-width: 768px) {
-    /* Ensure the Home Page Fills the Entire Screen */
+    /* 🌟 Ensure Full-Screen Layout */
     .home-page {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        overflow: hidden; /* Prevent white space */
-        position: relative; /* Ensures content aligns well */
+        position: relative; /* Ensures proper layout */
     }
 
-    /* Fix Hero Section to Fill Available Space */
+    /* 🌟 Hero Section Fix */
     .hero {
         flex-grow: 1; /* Expands hero section */
         display: flex;
@@ -675,16 +679,16 @@ footer {
         padding: 20px;
     }
 
-    /* Fix Background Image with Smooth Movement */
+    /* 🌟 Fix Background & Restore Animation */
     .home-bg {
         background: url('images/background.jpg') no-repeat center center/cover;
-        animation: moveBg 8s infinite alternate ease-in-out;
+        animation: moveBg 10s infinite alternate ease-in-out;
         background-size: cover;
         position: fixed; /* Keep it behind content */
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Full viewport height */
+        height: 100vh; /* Cover full screen */
         z-index: -1; /* Push behind everything */
     }
 
@@ -693,7 +697,7 @@ footer {
         100% { background-position-y: 50px; } /* Moves image up/down */
     }
 
-    /* Ensure Footer Stays Attached to the Bottom */
+    /* 🌟 Footer Fix - Attach to Bottom */
     footer {
         background: #000;
         color: white;
