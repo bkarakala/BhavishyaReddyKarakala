@@ -127,6 +127,7 @@ function toggleMenu() {
     menu.classList.toggle("open");
 }
 
+
 // Close menu and navigate smoothly when clicking a link
 document.querySelectorAll(".mobile-menu a").forEach(link => {
     link.addEventListener("click", function(event) {

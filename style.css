@@ -161,19 +161,19 @@ header {
     position: relative; /* Allows pseudo-elements if needed */
     
     /* 🔥 Gradient Text Effect */
-    background: linear-gradient(90deg, #007BFF, #0056b3);  /* Sky Blue Gradient */
+    background: linear-gradient(90deg, #ffa600, #ffa600);  /* Sky Blue Gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
     /* ✨ Text Shadow for Extra Glow */
-    text-shadow: 4px 4px 15px rgba(0, 123, 255, 0.6);
+    text-shadow: 4px 4px 15px rgba(255, 170, 0, 0.6);
 }
 
 /* 🔄 Fallback for Browsers That Don't Support Gradient Text */
 @supports not (-webkit-background-clip: text) {
     .hero-title {
-        color: #007BFF; /* Solid Sky Blue Fallback */
+        color: #b3ff00; /* Solid Sky Blue Fallback */
     }
 }
 
@@ -231,14 +231,14 @@ header {
     font-weight: 400;
     line-height: 1.8;
     margin-bottom: 25px;
-    color: #fe08f2; /* Dodger Blue for high contrast */
+    color: #fe08cd; /* Dodger Blue for high contrast */
     text-shadow: 1px 1px 5px rgba(30, 144, 255, 0.3);
     text-align: center; /* Ensures alignment on all screens */
 }
 
 /* 🔹 Highlighted Keywords */
 .hero-description strong {
-    color: #fe08f2; /* Deep Sky Blue */
+    color: #fe08cd; /* Deep Sky Blue */
     font-weight: bold;
 }
 
@@ -255,7 +255,7 @@ header {
 /* 🚀 Button Styling */
 .btn {
     display: inline-block;
-    background: #ff9d00; /* Tomato Red */
+    background: #2b00ff; /* Tomato Red */
     color: white;
     padding: 14px 24px;
     font-size: 18px;
@@ -269,17 +269,17 @@ header {
 /* 🔥 Hover Effect */
 .btn:hover {
     transform: scale(1.05);
-    background: #ff9d00;
+    background: #2b00ff;
     box-shadow: 0 0 15px rgba(255, 71, 249, 0.3);
 }
 
 /* 🎨 Updated Resume Button */
 .btn-secondary {
-    background: #ff9d00; /* Same as Projects Button */
+    background: #2b00ff; /* Same as Projects Button */
 }
 
 .btn-secondary:hover {
-    background: #ff9d00;
+    background: #2b00ff;
 }
 
 /* 📱 Responsive Adjustments */
@@ -1024,81 +1024,12 @@ html, body {
     display: block;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-/* 📌 Hide Desktop Navbar on Mobile */
-@media (max-width: 768px) {
-    .nav-right {
-        display: none; /* Hide desktop menu on mobile */
-    }
-
-    /* 🍔 Show Hamburger Menu */
-    .hamburger {
-        display: block; /* Ensure it's visible on mobile */
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
-        position: absolute;
-        top: 15px;
-        right: 65px; /* Move it further left */
-        z-index: 1200;
-    }
-
-    /* 🌟 Default Background for Home Page */
-.home-bg {
-    background: url('images/background.jpg') no-repeat center center/cover;
-    animation: moveBg 10s infinite alternate ease-in-out;
-    background-size: cover;
-    position: absolute; /* ✅ Ensures it stays behind content */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
-
-/* 🌟 Background Animation */
-@keyframes moveBg {
-    0% { background-position-y: 0px; }
-    50% { background-position-y: 25px; } /* Adds smooth midpoint */
-    100% { background-position-y: 50px; }
-}
-
-/* 📱 Mobile Styles (Ensure Background Works on Mobile) */
-@media (max-width: 768px) {
-/* 🌟 Ensure Background Image is Applied */
-.home-bg {
-    background-image: url('images/background.jpg'); /* ✅ Ensure correct path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: moveBg 10s infinite alternate ease-in-out;
-    
-    position: fixed; /* ✅ Keeps it behind content */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -10; /* ✅ Ensures it stays behind everything */
-}
-
-@keyframes moveBg {
-    0% { background-position: center top; }
-    50% { background-position: center 20px; } /* ✅ Midpoint for smooth effect */
-    100% { background-position: center bottom; }
-}
-
-
-}
-
-/* 📱 Mobile Menu - Initially Hidden */
+}/* 🍔 Hide Mobile Menu by Default */
 .mobile-menu {
-    display: flex;
-    flex-direction: column;
+    display: none; /* Hidden by default */
     position: fixed;
     top: 0;
-    right: -100%; /* ✅ Initially hidden */
+    right: 0;
     width: 250px;
     height: 100vh;
     background: black;
@@ -1108,12 +1039,12 @@ html, body {
     z-index: 1200;
 }
 
-/* ✅ Show menu when toggled */
+/* ✅ Show Menu When Open */
 .mobile-menu.open {
-    right: 0;
+    display: block;
 }
 
-/* ❌ Close button moved properly inside menu */
+/* ❌ Close Button */
 .close-btn {
     font-size: 30px;
     color: white;
@@ -1121,27 +1052,28 @@ html, body {
     position: absolute;
     padding: 15px;
     top: 10px;
-    left: 20px; /* ✅ Moves the 'X' to the left inside the menu */
-    z-index: 1201;
+    right: 20px;
 }
 
-/* 📌 Mobile Menu Links */
+/* 📱 Mobile Menu Links */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-menu li {
+    padding: 15px;
+    text-align: center;
+}
+
 .mobile-menu a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    font-size: 18px;
     display: block;
-    text-align: center;
 }
 
 .mobile-menu a:hover {
     background: seagreen;
     border-radius: 5px;
-}
-
-/* 📌 Ensure Desktop Navbar Always Visible on Large Screens */
-@media (min-width: 769px) {
-    .mobile-menu {
-        display: none !important;
-    }
 }
