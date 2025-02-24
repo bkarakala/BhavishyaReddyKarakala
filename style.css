@@ -38,37 +38,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 📱 Mobile Navbar Adjustments */
-@media (max-width: 768px) {
-    .nav-right {
-        flex-direction: row; /* Set to horizontal line */
-        justify-content: space-between; /* Distribute items evenly */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        gap: 20px; /* Space between links */
-        width: 100%; /* Allow full width usage */
-    }
-
-    header {
-        padding: 12px 10px; /* Smaller padding for mobile */
-        flex-direction: column; /* Column for smaller view */
-        align-items: stretch; /* Stretch items */
-    }
-
-    .hero-title {
-        font-size: 36px; /* Reduce Welcome text size */
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* Ensure sections below the navbar have top margin */
-    .main-content {
-        margin-top: 80px; /* Add top margin to prevent overlap with navbar */
-    }
-}
-
 /* Navbar Left (Profile Image & Name) */
 .nav-left {
     display: flex;
@@ -124,6 +93,48 @@ header {
 /* Hover Effect */
 .nav-right li a:hover {
     color: seagreen;
+}
+
+/* 📱 Mobile Navbar Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack name with picture on top */
+        align-items: center; /* Center align content */
+        padding: 12px 20px; /* Responsive padding */
+    }
+
+    .nav-left {
+        margin-bottom: 10px; /* Space between the name and nav items */
+        display: flex; /* Ensure it remains a flex container */
+        align-items: center; /* Center items vertically */
+    }
+
+    .profile-pic {
+        width: 45px; /* Keep profile picture consistent */
+        height: 45px;
+        border-radius: 50%; /* Keeping it circular */
+        margin-right: 12px; /* Space between pic and name */
+    }
+
+    .logo-text {
+        font-size: 20px; /* Keep the font size for the name */
+        color: white;
+        font-weight: bold; /* Optionally bold */
+    }
+
+    .nav-right {
+        justify-content: center; /* Center the nav items */
+        gap: 20px; /* Space between nav items */
+        display: flex; /* Ensure nav items are horizontally aligned */
+        width: 100%; /* Set to 100% for full width */
+        margin-top: 10px; /* Add space above navigation */
+    }
+
+    /* Ensure the navbar items do not wrap */
+    .nav-right li {
+        flex: 1; /* Flex one item to share the space */
+        text-align: center; /* Center the text in each nav item */
+    }
 }
 
 /* 🌟 Hero Section Styling */
