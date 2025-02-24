@@ -241,12 +241,16 @@ header {
     font-weight: bold;
 }
 
-/* 📱 Responsive Fix for Mobile */
+/* 📱 Mobile View for Home Section */
 @media (max-width: 768px) {
-    .hero-description {
-        font-size: 16px; /* Slightly smaller font for mobile */
-        line-height: 1.4;
-        padding: 0 5%;
+    .hero {
+        height: auto; /* Remove fixed height to prevent overflow */
+        min-height: 100vh;
+        padding: 60px 10px; /* Add padding for spacing */
+        display: flex;
+        flex-direction: column; /* Stack items */
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
 }
@@ -288,24 +292,30 @@ header {
         text-align: center; /* Center text for mobile */
     }
 
-    .hero-title {
-        font-size: 36px; /* Adjusted for mobile */
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center; /* Center buttons on mobile */
-    }
-
-    .btn {
-        width: 90%; /* Full width for buttons */
-        padding: 12px; /* Padding adjustment */
-        font-size: 16px;
-        text-align: center; /* Center text in buttons */
-    }
+/* Adjust Hero Description */
+.hero-description {
+    font-size: 16px; /* Slightly smaller font */
+    line-height: 1.5; /* Better readability */
+    text-align: center;
+    padding: 0 10%; /* Ensure proper spacing */
+    margin-bottom: 20px; /* Space before buttons */
 }
 
+/* Buttons: Stack Vertically */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Center buttons */
+    width: 100%;
+}
+
+.btn {
+    width: 85%; /* Full-width buttons for better UX */
+    padding: 12px;
+    font-size: 16px;
+}
+}
 /* 🔄 Fade-In Animation */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
