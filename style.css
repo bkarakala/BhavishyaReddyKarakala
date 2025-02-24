@@ -23,10 +23,10 @@ body {
 @keyframes moveBg {
     0% { background-position: center top; }
     100% { background-position: center bottom; }
-}
-/* Navigation Bar */
+}/* Navigation Bar */
+/* 📌 Fixed Navbar */
 header {
-    background: #000000; /* Black Navbar */
+    background: #000000;
     padding: 14px 40px;
     display: flex;
     align-items: center;
@@ -39,25 +39,27 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Fix Content Overlapping with Navbar */
-body {
-    padding-top: 80px; /* Pushes the content down */
-}
-
-/* Mobile Responsive Fix */
+/* 📱 Mobile Navbar Adjustments */
 @media (max-width: 768px) {
-    body {
-        padding-top: 100px; /* Extra space for smaller screens */
+    header {
+        padding: 12px 20px; /* Smaller padding for mobile */
     }
 
-    .hero {
-        padding-top: 120px; /* Ensures welcome section is visible */
+    .nav-right {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
     }
 
-    .projects-container {
-        padding-top: 80px; /* Fix for projects page */
+    .hero-title {
+        font-size: 36px; /* Reduce Welcome text size */
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
     }
 }
+
 
 
 /* Navbar Left (Profile Image & Name) */
