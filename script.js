@@ -2,13 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded Successfully! 🚀");
 
     // ========== 🏷️ Active Navigation Highlight ==========
-    const navLinks = document.querySelectorAll(".nav-right li a");
+    const navLinks = document.querySelectorAll(".nav-right li a, .mobile-menu a");
 
     function updateActiveLink() {
-        let currentPage = window.location.pathname.split("/").pop();
-        if (currentPage === "") {
-            currentPage = "index.html"; // Default to home page if empty
-        }
+        const currentPage = window.location.pathname.split("/").pop() || "index.html"; // Default to home page if empty
         navLinks.forEach(link => {
             link.classList.remove("active");
             if (link.getAttribute("href") === currentPage) {
@@ -18,27 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateActiveLink(); // Run on page load
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("JavaScript Loaded Successfully! 🚀");
-    
-        // ========== 🍔 Mobile Menu Toggle ==========
-        const hamburger = document.querySelector(".hamburger");
-        const mobileMenu = document.getElementById("mobile-menu");
-    
-        if (hamburger && mobileMenu) {
-            hamburger.addEventListener("click", function () {
-                mobileMenu.classList.toggle("open");
+
+    // ========== 🍔 Mobile Menu Toggle ==========
+    const hamburger = document.querySelector(".hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener("click", function () {
+            mobileMenu.classList.toggle("open");
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll(".mobile-menu a").forEach(link => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("open");
             });
-    
-            // Close mobile menu when clicking a link
-            document.querySelectorAll(".mobile-menu a").forEach(link => {
-                link.addEventListener("click", function () {
-                    mobileMenu.classList.remove("open");
-                });
-            });
-        }
-    });
-    
+        });
+    }
+
     // ========== 🎬 Skills Pop-in & Pop-out Animation ==========
     const skills = document.querySelectorAll(".skills-grid span");
 
@@ -120,54 +114,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", adjustFooter);
     adjustFooter(); // Run on page load
-});
 
-function toggleMenu() {
-    const menu = document.querySelector(".mobile-menu");
-    menu.classList.toggle("open");
-}
+    // ========== 🌟 Smooth Scrolling for All Links ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1); // Remove "#"
+            const targetSection = document.getElementById(targetId);
 
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Adjust scroll position
+                    behavior: "smooth" // Smooth scrolling effect
+                });
+            }
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("JavaScript Loaded Successfully! 🚀");
-
-    // Toggle Mobile Menu
-    function toggleMenu() {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("open");
-    }
-
-    // Attach event listener to the hamburger icon
-    const hamburger = document.querySelector(".hamburger");
-    if (hamburger) {
-        hamburger.addEventListener("click", toggleMenu);
-    }
-
-    // Close menu when clicking a link inside mobile menu
-    document.querySelectorAll(".mobile-menu a").forEach(link => {
-        link.addEventListener("click", function () {
-            document.getElementById("mobile-menu").classList.remove("open");
+            // Close the mobile menu after navigating (if open)
+            if (mobileMenu && mobileMenu.classList.contains("open")) {
+                mobileMenu.classList.remove("open");
+            }
         });
-    });
-});
-
-
-// Close menu and navigate smoothly when clicking a link
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default jump
-        const targetId = this.getAttribute("href").substring(1); // Remove "#"
-        const targetSection = document.getElementById(targetId);
-
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 50, // Adjust scroll position
-                behavior: "smooth" // Smooth scrolling effect
-            });
-        }
-
-        // Close the menu after navigating
-        document.querySelector(".mobile-menu").classList.remove("open");
     });
 });
