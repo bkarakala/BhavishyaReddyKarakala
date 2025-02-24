@@ -148,34 +148,44 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-right");
+    console.log("JavaScript Loaded Successfully! 🚀");
 
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
+    // 🍔 Mobile Menu Toggle
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    // Close menu when clicking on a link (for better UX)
-    document.querySelectorAll(".nav-right li a").forEach(link => {
-        link.addEventListener("click", function () {
-            navMenu.classList.remove("active");
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener("click", function () {
+            mobileMenu.classList.toggle("open");
         });
-    });
-});
 
+        // ✅ Close mobile menu when clicking a link
+        document.querySelectorAll(".mobile-menu a").forEach(link => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("open");
+            });
+        });
+    }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-right");
+    // ✅ Highlight Active Page in Navbar
+    const navLinks = document.querySelectorAll(".nav-right li a, .mobile-menu a");
 
-    menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
-});
+    function updateActiveLink() {
+        let currentPage = window.location.pathname.split("/").pop();
+        if (currentPage === "") {
+            currentPage = "index.html"; // Default to home page if empty
+        }
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    }
 
-
-document.getElementById("hamburger").addEventListener("click", function() {
-    const navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("active");
+    updateActiveLink();
 });
