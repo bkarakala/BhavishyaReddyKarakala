@@ -110,7 +110,7 @@ header {
     .hamburger {
         display: block; /* Show the toggle */
         position: absolute;
-        right: 20px; /* Position it properly */
+        left: 20px; /* Position it properly */
         top: 20px;
         z-index: 1500;
     }
