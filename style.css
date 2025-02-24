@@ -96,15 +96,27 @@ header {
 }
 
 /* Hamburger Menu Icon */
+/* 📱 Show Hamburger Icon in Mobile */
 .hamburger {
     display: none; /* Hidden by default */
     font-size: 24px;
     color: white;
     cursor: pointer;
-    z-index: 1001;
+    margin-left: 12px;
 }
 
-/* Mobile Menu */
+/* 📱 Mobile View - Show Hamburger */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show the toggle */
+    }
+
+    .nav-right {
+        display: none; /* Hide desktop menu */
+    }
+}
+
+/* 📱 Mobile Menu */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -138,7 +150,6 @@ header {
     border-radius: 5px;
 }
 
-/* Close Button */
 .close-btn {
     font-size: 30px;
     color: white;
