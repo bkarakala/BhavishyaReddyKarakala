@@ -30,11 +30,11 @@
         <!-- 📱 Mobile Navigation Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <span class="close-btn" onclick="toggleMenu()">✖</span>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="experience.html">Experience</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" onclick="navigateAndCloseMenu()">Home</a>
+            <a href="about.html" onclick="navigateAndCloseMenu()">About</a>
+            <a href="projects.html" onclick="navigateAndCloseMenu()">Projects</a>
+            <a href="experience.html" onclick="navigateAndCloseMenu()">Experience</a>
+            <a href="contact.html" onclick="navigateAndCloseMenu()">Contact</a>
         </div>
     </header>
 
@@ -93,23 +93,14 @@
     <!-- ✅ JavaScript: Mobile Menu Functionality -->
     <script>
         function toggleMenu() {
-            var menu = document.querySelector(".mobile-menu");
+            var menu = document.getElementById("mobile-menu");
             menu.classList.toggle("open");
         }
 
-        // Close menu and navigate smoothly when clicking a link
-        document.querySelectorAll(".mobile-menu a").forEach(link => {
-            link.addEventListener("click", function(event) {
-                event.preventDefault(); // Prevent default jump
-                const targetPage = this.getAttribute("href");
-
-                // Navigate to the correct page
-                window.location.href = targetPage;
-
-                // Close the menu after clicking
-                document.querySelector(".mobile-menu").classList.remove("open");
-            });
-        });
+        function navigateAndCloseMenu() {
+            // Close the menu
+            toggleMenu();
+        }
     </script>
 
 </body>

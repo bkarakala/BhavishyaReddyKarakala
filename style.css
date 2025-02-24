@@ -42,6 +42,7 @@ header {
 .nav-left {
     display: flex;
     align-items: center;
+    gap: 12px; /* Space between profile picture, name, and hamburger icon */
 }
 
 /* Profile Picture */
@@ -49,7 +50,6 @@ header {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    margin-right: 12px;
     object-fit: cover;
 }
 
