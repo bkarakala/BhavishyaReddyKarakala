@@ -40,18 +40,16 @@ header {
 
 /* 📱 Mobile Navbar Adjustments */
 @media (max-width: 768px) {
-    header {
-        padding: 12px 20px; /* Smaller padding for mobile */
-        flex-direction: column;
-        align-items: center; /* Center align items */
-        text-align: center; /* Center text for all mobile items */
+    .nav-right {
+        flex-direction: row; /* Ensure links are in a horizontal line */
+        justify-content: center; /* Center align the items */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        gap: 20px; /* Add spacing between links */
     }
 
-    .nav-right {
-        flex-direction: column; /* Stack links vertically */
-        gap: 10px;
-        width: 100%; /* Full width for menu */
-        padding: 0; /* Reset padding */
+    header {
+        padding: 12px 20px; /* Smaller padding for mobile */
+        flex-direction: row; /* Maintain horizontal structure */
     }
 
     .hero-title {
@@ -724,7 +722,7 @@ html, body {
 /* 📱 Responsive Adjustments */
 @media (max-width: 1024px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         text-align: center;
     }
