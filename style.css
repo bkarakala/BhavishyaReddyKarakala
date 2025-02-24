@@ -1011,57 +1011,70 @@ html, body {
     background: forestgreen;
 }
 
-
-/* Hamburger Menu */
-.hamburger {
-    display: none; /* Hidden by default */
-    flex-direction: column; /* Stack the lines */
-    cursor: pointer; /* Change cursor on hover */
+/* Navigation Bar */
+header {
+    background: #000000;
+    padding: 14px 20px; /* Reduced padding for mobile */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Hamburger Lines */
-.hamburger .line {
-    height: 3px; /* Height of the hamburger lines */
-    width: 30px; /* Width of the lines */
-    background-color: white; /* Color of lines */
-    margin: 4px 0; /* Space between lines */
+/* Navbar Right (Navigation Links) */
+.nav-right {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Keep display as flex for horizontal layout */
+    margin-left: auto; /* Push navbar to the right */
+    gap: 11px; /* Space between links */
 }
 
-/* 📱 Mobile Navbar Adjustments */
+/* Navbar Links */
+.nav-right li {
+    flex: 1; /* Allow each link to share available space */
+    text-align: center; /* Center text in each nav item */
+}
+
+.nav-right li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px; /* Increased padding for easier tapping */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-right li a:hover {
+    color: seagreen; /* Change color on hover */
+}
+
+/* 📱 Mobile Adjustments */
 @media (max-width: 768px) {
     .nav-right {
-        display: none; /* Hide nav links by default */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position below the navbar */
-        top: 55px; /* Position just below the header */
-        left: 0;
-        right: 0;
-        background-color: #000; /* Add background for visibility */
-        z-index: 999; /* Ensure it shows above other content */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        justify-content: space-between; /* Space links evenly */
     }
 
-    .nav-right.active {
-        display: flex; /* Show links when activated */
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon */
-    }
-    
     header {
-        flex-direction: row; /* Keep alignment */
-        justify-content: space-between; /* Space between logo and menu */
-        padding: 12px 20px; /* Padding for responsive */
+        padding: 10px 10px; /* Adjust padding */
+        flex-direction: row; /* Keep layout horizontal */
     }
 
+    /* Make the logo and profile picture slightly larger on mobile */
     .nav-left {
-        margin-bottom: 0; /* Reset margin */
         display: flex;
         align-items: center;
+        margin-right: 20px; /* Space after logo */
     }
-}
-
-/* Footer adjustments */
-footer {
-    margin-top: 0; /* Remove margin from header, use padding */
+    
+    .profile-pic {
+        width: 50px; /* Increase size if necessary */
+        height: 50px;
+    }
 }
