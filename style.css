@@ -109,6 +109,8 @@ header {
     color: white;
     padding: 0 10%;
 }
+
+
 /* 🏆 Welcome Title */
 .hero-title {
     font-size: 50px;
@@ -118,52 +120,25 @@ header {
     display: inline-block; /* Ensures proper rendering */
     margin-bottom: 15px;
     position: relative; /* Allows pseudo-elements if needed */
-
-    /* 🔥 Sky Blue Gradient Text Effect */
-    background: linear-gradient(90deg, #f6ff00,#f6ff00);  /* Sky Blue Gradient */
+    
+    /* 🔥 Gradient Text Effect */
+    background: linear-gradient(90deg, #007BFF, #0056b3);  /* Sky Blue Gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 
     /* ✨ Text Shadow for Extra Glow */
-    text-shadow: 4px 4px 15px rgba(0, 170, 255, 0.6);
+    text-shadow: 4px 4px 15px rgba(0, 123, 255, 0.6);
 }
 
 /* 🔄 Fallback for Browsers That Don't Support Gradient Text */
 @supports not (-webkit-background-clip: text) {
     .hero-title {
-        color: #ee00ff; /* Sky Blue Fallback */
+        color: #007BFF; /* Solid Sky Blue Fallback */
     }
 }
 
 /* 🎬 Smooth Fade-in Animation */
-.hero-title {
-    animation: fadeIn 1.2s ease-in-out, textGlow 1.5s infinite alternate ease-in-out;
-}
-
-/* 💡 Keyframe Animation for Fading Effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ✨ Keyframe Animation for Glowing Text Effect */
-@keyframes textGlow {
-    from {
-        text-shadow: 2px 2px 10px rgba(0, 170, 255, 0.5);
-    }
-    to {
-        text-shadow: 4px 4px 20px rgba(0, 153, 255, 0.7);
-    }
-}
-
-/* 🎬 Add a Simple Animation Effect */
 .hero-title {
     animation: fadeIn 1.2s ease-in-out, textGlow 1.5s infinite alternate ease-in-out;
 }
@@ -190,6 +165,26 @@ header {
     }
 }
 
+/* 📱 Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px; /* Reduce font size for mobile */
+        text-align: center;
+        line-height: 1.2;
+        margin-top: 20px; /* Add spacing from the top */
+    }
+    
+    /* Adjust Shadow for Mobile */
+    @keyframes textGlow {
+        from {
+            text-shadow: 1px 1px 8px rgba(0, 123, 255, 0.5);
+        }
+        to {
+            text-shadow: 2px 2px 15px rgba(0, 86, 179, 0.7);
+        }
+    }
+}
+
 /* 📜 Hero Description */
 .hero-description {
     font-size: 18px;
@@ -198,6 +193,7 @@ header {
     margin-bottom: 20px;
     color: #fe08f2; /* Dodger Blue for high contrast */
     text-shadow: 1px 1px 5px rgba(30, 144, 255, 0.3);
+    text-align: center; /* Ensures alignment on all screens */
 }
 
 /* 🔹 Highlighted Keywords */
@@ -206,7 +202,15 @@ header {
     font-weight: bold;
 }
 
-
+/* 📱 Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .hero-description {
+        font-size: 16px; /* Slightly smaller font for mobile */
+        line-height: 1.4;
+        padding: 0 5%;
+        text-align: center;
+    }
+}
 
 /* 🚀 Button Styling */
 .btn {
@@ -222,16 +226,12 @@ header {
     box-shadow: 0 4px 10px rgba(255, 71, 249, 0.3);
 }
 
+/* 🔥 Hover Effect */
 .btn:hover {
     transform: scale(1.05);
     background: #ff9d00;
-}
-
-.btn:hover {
     box-shadow: 0 0 15px rgba(255, 71, 249, 0.3);
-    transform: scale(1.05);
 }
-
 
 /* 🎨 Updated Resume Button */
 .btn-secondary {
@@ -242,12 +242,6 @@ header {
     background:#ff9d00;
 }
 
-/* 🔄 Fade-In Animation */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
     .hero {
@@ -256,29 +250,37 @@ header {
     }
 
     .hero-title {
-        font-size: 40px;
+        font-size: 36px; /* Adjusted for mobile */
     }
 
     .hero-buttons {
         flex-direction: column;
         gap: 15px;
+        align-items: center;
     }
 
     .btn {
-        width: 100%;
+        width: 90%;
+        padding: 12px;
+        font-size: 16px;
+        text-align: center;
     }
 }
 
+/* 🔄 Fade-In Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 
-
-/* ACTIVE MENU ITEM */
+/* 🌟 Active Menu Item */
 .nav-right li a.active {
     color: seagreen;
     border-bottom: 3px solid seagreen;
 }
 
-/* About Section */
+/* 🏆 About Section */
 .about {
     padding: 80px 10%;
     text-align: center;
@@ -292,6 +294,7 @@ header {
     color: black;
 }
 
+/* 📌 About Container */
 .about-container {
     display: flex;
     justify-content: space-between;
@@ -300,23 +303,16 @@ header {
     align-items: center;
 }
 
+/* 📜 About Text */
 .about-text {
     width: 55%;
     text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
 }
 
-.skills-container {
-    width: 40%;
-}
-
-/* Flexbox Grid */
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
+/* 🛠 Skills Container */
 .skills-container {
     width: 40%;
 }
@@ -329,7 +325,7 @@ header {
     justify-content: center;
 }
 
-/* 🚀 Initial Hidden State */
+/* 🔥 Skill Tags */
 .skills-grid span {
     background: black;
     color: white;
@@ -348,43 +344,45 @@ header {
     transform: translateY(0) scale(1);
 }
 
-/* 🔄 Pop Out Effect (Smooth Disappearance) */
+/* 🔄 Pop Out Effect */
 .skills-grid span.hide {
     opacity: 0;
     transform: translateY(30px) scale(0.5);
     transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
 
-/* 🔥 EXPERIENCE SECTION STYLING */
-.experience {
-    padding: 80px 10%;
-    background: #f8f9fa;
-    position: relative;
-    text-align: center;
-}
+/* 📱 Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 5%;
+    }
 
-/* 🌟 Experience Title */
-.section-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
-    text-transform: uppercase;
-}
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
 
-.section-title::after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 3px;
-    background: #ff4500; /* Accent color */
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+    .about-text {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+    }
 
+    .skills-container {
+        width: 100%;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
+
+    .skills-grid span {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+}
 /* 🌟 Experience Section */
 .experience {
     padding: 80px 10%;
@@ -393,7 +391,7 @@ header {
     position: relative;
 }
 
-/* 🔥 Title Styling */
+/* 🔥 Experience Title */
 .section-title {
     font-size: 36px;
     font-weight: bold;
@@ -404,6 +402,7 @@ header {
     display: inline-block;
 }
 
+/* 🔥 Underline Effect */
 .section-title::after {
     content: "";
     position: absolute;
@@ -436,7 +435,7 @@ header {
     transform: translateY(30px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
-    border-left: 5px solid transparent; /* Start with no accent */
+    border-left: 5px solid transparent;
 }
 
 /* 🚀 Card Appears on Scroll */
@@ -449,7 +448,7 @@ header {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    border-left: 5px solid #ff4500; /* Orange left accent grows */
+    border-left: 5px solid #ff4500;
 }
 
 /* 🏷️ Job Header */
@@ -507,11 +506,11 @@ header {
 
 /* 📌 Bullet Points (•) */
 .job-description li::before {
-    content: "•"; /* Bullet point */
+    content: "•";
     position: absolute;
     left: 5px;
-    color: black; /* Change color as needed */
-    font-size: 20px; /* Adjust size */
+    color: black;
+    font-size: 20px;
     font-weight: bold;
     opacity: 0;
     transform: scale(0.5);
@@ -525,24 +524,42 @@ header {
     transition-delay: 0.2s;
 }
 
+/* 📱 Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .experience {
+        padding: 60px 5%;
+    }
 
-
-/* 🔄 Animation Keyframes */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* 📱 Responsive Fix */
-@media (max-width: 1024px) {
     .experience-container {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-title {
+        font-size: 16px;
+    }
+
+    .job-date {
+        font-size: 12px;
+    }
+
+    .job-description li {
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    .job-description li::before {
+        font-size: 16px;
+        left: 3px;
     }
 }
-
-
-
 /* 🌍 Ensure full height layout */
 html, body {
     height: 100%;
@@ -558,27 +575,35 @@ html, body {
     padding-bottom: 40px; /* 🔥 Add some space at the bottom */
 }
 
-/* 🏁 Footer - Moves Down */
+/* 🏁 Footer - Stays at the Bottom */
 footer {
     background: #000;
     color: white;
     text-align: center;
-    padding: 20px;  /* Increased padding for better spacing */
+    padding: 20px;
     width: 100%;
     position: relative;
     bottom: 0;
-    margin-top: 40px;  /* 🔥 Pushes the footer down */
+    margin-top: 40px;
 }
 
+/* 📌 Footer Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
 
-
-
+/* 🎨 Projects Section */
 .projects h1 {
     font-size: 32px;
     font-weight: bold;
     color: black;
+    text-align: center;
 }
 
+/* 🔥 Project Container */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -587,6 +612,7 @@ footer {
     margin-top: 20px;
 }
 
+/* 🔥 Project Cards */
 .project {
     background: white;
     padding: 20px;
@@ -597,59 +623,27 @@ footer {
     max-width: 500px;
 }
 
+/* 🖼️ Project Image */
 .project img {
     width: 100%;
     border-radius: 8px;
 }
 
+/* 🖱️ Hover Effect */
 .project:hover {
     transform: scale(1.05);
     background: seagreen; /* Sea Green Accent */
     color: white;
 }
 
-
-
-/* 📌 Footer Fix */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.main-content {
-    flex: 1; /* Ensures content pushes the footer down */
-}
-
-footer {
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-    position: relative; /* Default, will work if content is taller */
-    bottom: 0;
-}
-
-
-footer {
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    position: relative; /* Ensure it stays within the page */
-    width: 100%;
-    bottom: 0;
-}
-
+/* 🔥 Footer Content */
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* 📢 Social Icons */
 .social-icons {
     margin-top: 10px;
 }
@@ -665,7 +659,20 @@ footer {
     color: seagreen;
 }
 
-/* Animations */
+/* 📌 Footer Fix */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* 🔄 Animations */
 @keyframes fadeInBody {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -681,14 +688,31 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
+/* 📱 Responsive Adjustments */
 @media (max-width: 1024px) {
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-}/* 🌟 Contact Section */
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    .footer-content {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+
+/* 🌟 Contact Section */
 .contact {
     padding: 80px 10%;
     background: white;
@@ -702,34 +726,46 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     gap: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
 }
 
-/* 📩 Contact Info */
+/* 📩 Contact Info (Left Side) */
 .contact-info {
     flex: 1;
     text-align: left;
+    min-width: 350px; /* Prevents shrinking on smaller screens */
 }
 
+/* 📌 Contact Header */
+.contact-info h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* 📌 Contact Details (Email, LinkedIn) */
 .contact-info p {
     font-size: 18px;
-    margin: 10px 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    margin: 10px 0;
 }
-
-/* 📨 Contact Icons */
-
 
 /* 📌 Contact Icons */
 .contact-info i {
-    font-size: 20px;
-    color: seagreen; /* Green Color */
-    margin-right: 8px;
+    font-size: 22px;
+    color: seagreen;
+    transition: color 0.3s ease-in-out;
 }
 
-/* 📩 Email & LinkedIn Link Styling */
+.contact-info i:hover {
+    color: forestgreen;
+}
+
+/* 🔗 Contact Links */
 .contact-info a {
     color: seagreen;
     text-decoration: none;
@@ -738,40 +774,19 @@ footer {
 
 .contact-info a:hover {
     text-decoration: underline;
+    color: forestgreen;
 }
 
-/* 📜 Contact Text Alignment */
-.contact-info p {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-info i {
-    font-size: 20px;
-    color: seagreen; /* Green Theme */
-}
-
-/* 🔗 Contact Links */
-.contact-info a {
-    color: seagreen; 
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* 📝 Contact Form */
+/* 📝 Contact Form (Right Side) */
 .contact-form {
     flex: 1;
     background: #FFFFFF;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     animation: fadeInForm 1.5s ease-in-out;
+    text-align: left;
+    min-width: 400px; /* Ensures proper width */
 }
 
 /* 🖋️ Form Inputs */
@@ -781,7 +796,7 @@ footer {
 }
 
 .input-group label {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -791,182 +806,8 @@ footer {
 .input-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid seagreen;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-    outline: none;
-    border-color: forestgreen; 
-    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3); 
-}
-
-/* ✉️ Send Message Button */
-.btn-send {
-    display: inline-block;
-    background: seagreen;
-    color: white;
-    padding: 12px 20px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.btn-send:hover {
-    transform: scale(1.05);
-    background: forestgreen; 
-}
-
-
-/* Form Inputs */
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid seagreen; /* Sea Green Accent */
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-    outline: none;
-    border-color: forestgreen; /* Darker Sea Green */
-    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3); /* Sea Green Shadow */
-}
-
-/* Send Message Button */
-
-
-
-.btn-send {
-    display: inline-block;
-    background: seagreen; /* Sea Green Accent */
-    color: white;
-    padding: 12px 20px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.btn-send:hover {
-    transform: scale(1.05);
-    background: forestgreen; /* Darker Sea Green */
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-info,
-    .contact-form {
-        width: 100%;
-    }
-}
-
-/* 🎯 Contact Section Layout */
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;  /* Space between sections */
-    padding: 50px 10%;
-}
-
-/* 📩 Contact Info Styling */
-.contact-info {
-    flex: 1;  /* Takes half the space */
-    text-align: left;
-}
-
-.contact-info h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.contact-info p {
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* 📨 Icons Styling */
-.contact-info i {
-    font-size: 20px;
-    color: seagreen;
-}
-
-/* 🔗 Contact Links */
-.contact-info a {
-    color: seagreen;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* 📩 Contact Form Styling */
-.contact-form {
-    flex: 1;  /* Takes half the space */
-    background: #FFFFFF;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    animation: fadeInForm 1.5s ease-in-out;
-}
-
-/* 📝 Form Inputs */
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid seagreen;
-    border-radius: 5px;
+    border: 2px solid seagreen;
+    border-radius: 6px;
     font-size: 16px;
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -975,7 +816,7 @@ footer {
 .input-group textarea:focus {
     outline: none;
     border-color: forestgreen;
-    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+    box-shadow: 0 0 10px rgba(46, 139, 87, 0.3);
 }
 
 /* ✉️ Send Message Button */
@@ -983,10 +824,11 @@ footer {
     display: inline-block;
     background: seagreen;
     color: white;
-    padding: 12px 20px;
+    padding: 14px 24px;
     text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
     border: none;
     cursor: pointer;
@@ -998,96 +840,27 @@ footer {
     background: forestgreen;
 }
 
-
-
-
-
-
-/* 📱 Responsive Fixes for Mobile Devices */
+/* 📱 FINAL MOBILE FIXES */
 @media (max-width: 768px) {
-    /* ✅ Fix Navbar for Mobile */
-    header {
+    .contact-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px 20px;
+        gap: 30px;
     }
 
-    /* 📌 Navbar Right: Convert to Mobile Menu */
-    .nav-right {
-        display: none; /* Hide initially */
-        flex-direction: column;
+    .contact-info {
+        text-align: center;
         width: 100%;
-        background: black;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
-        text-align: center;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .nav-right.active {
-        display: flex; /* Show when active */
+    .contact-form {
+        width: 100%;
+        min-width: unset;
+        text-align: left;
     }
 
-    /* ☰ Hamburger Menu Button */
-    .menu-toggle {
-        display: block;
-        font-size: 28px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-    }
-
-    /* ✅ Fix Hero Section */
-    .hero {
-        padding: 60px 20px;
-        text-align: center;
-        height: auto; /* Adjust height */
-    }
-
-    .hero-title {
-        font-size: 36px; /* Reduce title size */
-    }
-
-    .hero-description {
-        font-size: 16px;
-        line-height: 1.5;
-        padding: 0 10px;
-    }
-
-    /* ✅ Fix Buttons */
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn {
-        width: 100%; /* Full width on mobile */
-        padding: 12px;
-    }
-
-    /* ✅ Fix Projects & Experience Section */
-    .experience-container,
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .card {
-        width: 90%; /* Make cards full width */
-    }
-
-    /* ✅ Fix Footer */
-    footer {
-        font-size: 14px;
-        text-align: center;
-        padding: 10px 15px;
+    .btn-send {
+        width: 100%;
     }
 }

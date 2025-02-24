@@ -170,6 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const navMenu = document.querySelector(".nav-right");
 
     menuToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active"); // Toggle menu visibility
+        navMenu.classList.toggle("active");
     });
 });
