@@ -1068,23 +1068,36 @@ html, body {
     
     /* 📱 Mobile Menu - Initially Hidden */
     .mobile-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background: black;
-        width: 200px;
-        padding: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        z-index: 1000;
-    }
-
-    /* ✅ Show Mobile Menu when toggled */
-    .mobile-menu.open {
         display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Initially hidden */
+        width: 250px;
+        height: 100vh;
+        background: black;
+        padding: 20px;
+        box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease-in-out;
+        z-index: 1100;
     }
+    
+    /* ✅ Show menu when toggled */
+    .mobile-menu.open {
+        right: 0;
+    }
+    
+    /* Close button styling */
+    .close-btn {
+        font-size: 30px;
+        color: white;
+        text-align: right;
+        cursor: pointer;
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
 
     .mobile-menu a {
         color: white;

@@ -128,3 +128,10 @@ function toggleMenu() {
     const menu = document.querySelector(".mobile-menu");
     menu.classList.toggle("open");
 }
+
+// Close menu when clicking a link
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", function() {
+        document.querySelector(".mobile-menu").classList.remove("open");
+    });
+});
