@@ -1011,7 +1011,6 @@ html, body {
     background: forestgreen;
 }
 
-
 /* 🍔 Mobile Menu Styling */
 .hamburger {
     display: none;
@@ -1068,13 +1067,26 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* 📱 Show Hamburger Icon Only on Mobile */
+/* 🍔 Mobile Menu Toggle Button */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 60px; /* ✅ Moved slightly left */
+    z-index: 1200;
+}
+
+/* 📱 Mobile Menu Adjustments */
 @media (max-width: 768px) {
     .hamburger {
         display: block; /* ✅ Show on Mobile */
         position: absolute;
         top: 15px;
-        right: 20px;
+        right: 60px; /* ✅ Further moved left for better alignment */
         z-index: 1200;
     }
 
