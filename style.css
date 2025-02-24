@@ -294,17 +294,20 @@ header {
     }
 
     .hero-buttons {
+        display: flex;
         flex-direction: column;
-        gap: 15px;
-        align-items: center; /* Center buttons on mobile */
+        gap: 25px; /* Increase space between buttons */
+        align-items: center;
+        width: 100%;
     }
-
+    
     .btn {
-        width: 90%; /* Full width for buttons */
-        padding: 12px; /* Padding adjustment */
-        font-size: 16px;
-        text-align: center; /* Center text in buttons */
+        width: 85%; /* Ensure consistent button width */
+        padding: 14px;
+        font-size: 18px;
+        text-align: center;
     }
+    
 }
 
 /* 🔄 Fade-In Animation */
@@ -1071,5 +1074,24 @@ html, body {
     .mobile-menu {
         display: none !important;
     }
+}
+
+
+@keyframes moveBg {
+    0% { background-position-y: 0px; }
+    50% { background-position-y: 25px; } /* Add mid-point movement */
+    100% { background-position-y: 50px; }
+}
+
+.home-bg {
+    background: url('images/background.jpg') no-repeat center center/cover;
+    animation: moveBg 10s infinite alternate ease-in-out;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
 }
 
