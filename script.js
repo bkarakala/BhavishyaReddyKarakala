@@ -18,28 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateActiveLink(); // Run on page load
+
+
     document.addEventListener("DOMContentLoaded", function () {
-        console.log("JavaScript Loaded Successfully! 🚀");
-    
-        // ========== 🍔 Mobile Menu Toggle ==========
-        const hamburger = document.querySelector(".hamburger");
-        const mobileMenu = document.getElementById("mobile-menu");
-    
-        if (hamburger && mobileMenu) {
-            hamburger.addEventListener("click", function () {
-                mobileMenu.classList.toggle("open");
-            });
-    
-            // Close mobile menu when clicking a link
-            document.querySelectorAll(".mobile-menu a").forEach(link => {
-                link.addEventListener("click", function () {
-                    mobileMenu.classList.remove("open");
-                });
-            });
+        const text = "Welcome";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("hero-title").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 150);
+            }
         }
+        typeEffect();
     });
     
-    // ========== 🎬 Skills Pop-in & Pop-out Animation ==========
+
+    // ========== 🎨 Skills Pop-in & Pop-out Animation ==========
     const skills = document.querySelectorAll(".skills-grid span");
 
     function checkSkills() {
@@ -49,9 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (skillTop < windowHeight - 50) {
                 skill.classList.add("show");
+                skill.classList.remove("hide");
                 skill.style.transitionDelay = `${index * 0.08}s`; // Staggered Effect
             } else {
                 skill.classList.remove("show");
+                skill.classList.add("hide");
             }
         });
     }
@@ -72,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 job.style.animation = `fadeInUp 0.8s ease-out ${index * 0.1}s forwards`;
             } else {
                 job.classList.remove("show");
+                job.style.animation = "none";
             }
         });
     }
@@ -120,4 +118,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", adjustFooter);
     adjustFooter(); // Run on page load
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page reload
+
+        // Get user input values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Validate inputs
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill in all fields before sending.");
+            return;
+        }
+
+        // Create the mailto link
+        const mailtoLink = `mailto:bhavireddyk08@gmail.com?subject=New message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
+
+        // Redirect user to email client
+        window.location.href = mailtoLink;
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-right");
+
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+
+    // Close menu when clicking on a link (for better UX)
+    document.querySelectorAll(".nav-right li a").forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-right");
+
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+});
+
+
+document.getElementById("hamburger").addEventListener("click", function() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
 });
