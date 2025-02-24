@@ -62,6 +62,11 @@ header {
         flex-direction: column;
         gap: 15px;
     }
+
+    /* Ensure sections below the navbar have top margin */
+    .main-content {
+        margin-top: 80px; /* Add top margin to prevent overlap with navbar */
+    }
 }
 
 /* Navbar Left (Profile Image & Name) */
@@ -131,7 +136,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 0 10%; /* Adjusted for better layout on large screens */
+    padding: 0 10%;
 }
 
 /* 🏆 Welcome Title */
@@ -308,6 +313,7 @@ header {
     text-align: center;
     background: #FFFFFF;
     animation: fadeInContent 1.5s ease-in-out;
+    margin-top: 80px; /* Prevent overlap with fixed navbar */
 }
 
 .about h1 {
@@ -377,6 +383,7 @@ header {
 @media (max-width: 768px) {
     .about {
         padding: 60px 5%;
+        margin-top: 80px; /* Prevent overlap with fixed navbar */
     }
 
     .about-container {
@@ -412,6 +419,7 @@ header {
     background: #f8f9fa;
     text-align: center;
     position: relative;
+    margin-top: 80px; /* Prevent overlap with fixed navbar */
 }
 
 /* 🔥 Experience Title */
@@ -551,6 +559,7 @@ header {
 @media (max-width: 768px) {
     .experience {
         padding: 60px 5%;
+        margin-top: 80px; /* Prevent overlap with fixed navbar */
     }
 
     .experience-container {
@@ -741,6 +750,7 @@ html, body {
     background: white;
     animation: fadeInContent 1.5s ease-in-out;
     text-align: center;
+    margin-top: 80px; /* Prevent overlap with fixed navbar */
 }
 
 /* 📌 Contact Container */
