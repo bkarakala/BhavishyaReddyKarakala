@@ -152,12 +152,12 @@ header {
 
 /* 🏆 Welcome Title */
 .hero-title {
-    font-size: 50px;
-    font-weight: 900;
+    font-size: 42px;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     display: inline-block; /* Ensures proper rendering */
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative; /* Allows pseudo-elements if needed */
     
     /* 🔥 Gradient Text Effect */
@@ -226,10 +226,11 @@ header {
 
 /* 📜 Hero Description */
 .hero-description {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 17px;
+    padding: 0.8%;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 25px;
     color: #fe08f2; /* Dodger Blue for high contrast */
     text-shadow: 1px 1px 5px rgba(30, 144, 255, 0.3);
     text-align: center; /* Ensures alignment on all screens */
@@ -1019,12 +1020,17 @@ html, body {
 
     /* 🍔 Show Hamburger Menu */
     .hamburger {
-        display: block;
+        display: block; /* Ensure it's visible on mobile */
         font-size: 28px;
         color: white;
         cursor: pointer;
         padding: 10px;
+        position: absolute;
+        top: 15px;
+        right: 65px; /* Move it further left */
+        z-index: 1200;
     }
+    
 
     /* 📱 Mobile Menu - Initially Hidden */
     .mobile-menu {
@@ -1066,5 +1072,4 @@ html, body {
         display: none !important;
     }
 }
-
 
