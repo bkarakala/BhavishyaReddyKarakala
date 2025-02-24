@@ -19,9 +19,9 @@
         </div>
     
         <!-- 🍔 Mobile Menu Toggle Button -->
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="hamburger" id="hamburger">&#9776;</div> <!-- ☰ Icon -->
     
-        <!-- Desktop Navigation -->
+        <!-- 🖥️ Desktop Navigation -->
         <ul class="nav-right">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -30,8 +30,9 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     
-        <!-- 📱 Mobile Menu -->
+        <!-- 📱 Mobile Menu (Initially Hidden) -->
         <div class="mobile-menu" id="mobile-menu">
+            <div class="close-btn" id="close-menu">&times;</div> <!-- ✖ Close Button -->
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
@@ -39,6 +40,7 @@
             <a href="contact.html">Contact</a>
         </div>
     </header>
+    
 
     <section class="projects">
         <h1>My Projects</h1>
