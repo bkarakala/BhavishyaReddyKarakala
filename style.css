@@ -679,7 +679,6 @@ footer {
         padding: 20px;
     }
 
-    /* 🌟 Fix Background & Restore Animation */
     .home-bg {
         background: url('images/background.jpg') no-repeat center center/cover;
         animation: moveBg 10s infinite alternate ease-in-out;
@@ -691,34 +690,28 @@ footer {
         height: 100vh; /* Cover full screen */
         z-index: -1; /* Push behind everything */
     }
-
-    @keyframes moveBg {
-        0% { background-position-y: 0px; }
-        100% { background-position-y: 50px; } /* Moves image up/down */
-    }
-
-    /* 🌟 Fix Footer - Attach to Bottom */
+    
     footer {
         background: #000;
         color: white;
         text-align: center;
-        padding: 20px 10px;
+        padding: 20px;
         width: 100%;
-        position: relative;
-        margin-top: auto; /* Pushes footer to the bottom */
+        position: absolute; /* Stays at the bottom */
+        bottom: 0;
+        left: 0;
     }
+    
 } /* ✅ Make sure this closing bracket exists */
 @media (max-width: 768px) {
-    /* 🌟 Ensure Full-Screen Layout */
     .home-page {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        position: relative; /* Ensures proper layout */
+        overflow: hidden; /* Removes white space */
+        position: relative;
     }
-}
 
-    /* 🌟 Hero Section Fix */
     .hero {
         flex-grow: 1; /* Expands hero section */
         display: flex;
@@ -728,6 +721,12 @@ footer {
         text-align: center;
         padding: 20px;
     }
+
+    @keyframes moveBg {
+        0% { background-position-y: 0px; }
+        100% { background-position-y: 50px; }
+    }
+}
 
 
 
