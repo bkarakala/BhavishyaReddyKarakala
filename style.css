@@ -1076,10 +1076,10 @@ html, body {
         width: 250px;
         height: 100vh;
         background: black;
-        padding: 20px;
+        padding: 50px 20px;
         box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
         transition: right 0.3s ease-in-out;
-        z-index: 1100;
+        z-index: 1200;
     }
     
     /* ✅ Show menu when toggled */
