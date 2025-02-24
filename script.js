@@ -1,25 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded Successfully! 🚀");
 
-    // 🍔 Mobile Menu Toggle
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    if (hamburger && mobileMenu) {
-        hamburger.addEventListener("click", function () {
-            mobileMenu.classList.toggle("open");
-        });
-
-        // ✅ Close mobile menu when clicking a link
-        document.querySelectorAll(".mobile-menu a").forEach(link => {
-            link.addEventListener("click", function () {
-                mobileMenu.classList.remove("open");
-            });
-        });
-    }
-
-    // ✅ Highlight Active Page in Navbar
-    const navLinks = document.querySelectorAll(".nav-right li a, .mobile-menu a");
+    // ========== 🏷️ Active Navigation Highlight ==========
+    const navLinks = document.querySelectorAll(".nav-right li a");
 
     function updateActiveLink() {
         let currentPage = window.location.pathname.split("/").pop();
@@ -35,29 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateActiveLink(); // Run on page load
-
-    // ✅ Hero Section Typing Animation
-    const heroTitle = document.getElementById("hero-title");
-    if (heroTitle) {
-        const text = "Welcome";
-        let index = 0;
-        function typeEffect() {
-            if (index < text.length) {
-                heroTitle.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeEffect, 150);
-            }
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("JavaScript Loaded Successfully! 🚀");
+    
+        // ========== 🍔 Mobile Menu Toggle ==========
+        const hamburger = document.querySelector(".hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+    
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener("click", function () {
+                mobileMenu.classList.toggle("open");
+            });
+    
+            // Close mobile menu when clicking a link
+            document.querySelectorAll(".mobile-menu a").forEach(link => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("open");
+                });
+            });
         }
-        typeEffect();
-    }
-
-    // 🎨 Skills Pop-in Animation
+    });
+    
+    // ========== 🎬 Skills Pop-in & Pop-out Animation ==========
     const skills = document.querySelectorAll(".skills-grid span");
 
     function checkSkills() {
         skills.forEach((skill, index) => {
             const skillTop = skill.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
+
             if (skillTop < windowHeight - 50) {
                 skill.classList.add("show");
                 skill.style.transitionDelay = `${index * 0.08}s`; // Staggered Effect
@@ -70,13 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", checkSkills);
     checkSkills(); // Run on page load
 
-    // 🎬 Work Experience Cards Animation
+    // ========== 🎬 Work Experience Cards Animation ==========
     const jobEntries = document.querySelectorAll(".job");
 
     function revealJobs() {
         jobEntries.forEach((job, index) => {
             const jobTop = job.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
+
             if (jobTop < windowHeight - 50) {
                 job.classList.add("show");
                 job.style.animation = `fadeInUp 0.8s ease-out ${index * 0.1}s forwards`;
@@ -89,13 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealJobs);
     revealJobs(); // Run on page load
 
-    // 🚀 Projects Reveal Animation
+    // ========== 🚀 Projects Reveal Animation ==========
     const projects = document.querySelectorAll(".project");
 
     function revealProjects() {
         projects.forEach((project, index) => {
             const projectTop = project.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
+
             if (projectTop < windowHeight - 50) {
                 project.classList.add("show");
                 project.style.animation = `fadeIn 0.6s ease-out ${index * 0.1}s both`;
@@ -108,38 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealProjects);
     revealProjects(); // Run on page load
 
-    // 📩 Contact Form Handling
-    const contactForm = document.getElementById("contactForm");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent page reload
-
-            // Get user input values
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            // Validate inputs
-            if (name === "" || email === "" || message === "") {
-                alert("Please fill in all fields before sending.");
-                return;
-            }
-
-            // Create the mailto link
-            const mailtoLink = `mailto:bhavireddyk08@gmail.com?subject=New message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
-
-            // Redirect user to email client
-            window.location.href = mailtoLink;
-        });
-    }
-
-    // 📌 Footer Placement Fix
+    // ========== 📌 Footer Placement Fix ==========
     function adjustFooter() {
         const footer = document.querySelector("footer");
         const mainContent = document.querySelector(".main-content");
+
         if (footer && mainContent) {
             const windowHeight = window.innerHeight;
             const bodyHeight = document.body.offsetHeight;
+
             if (bodyHeight < windowHeight) {
                 footer.style.position = "absolute";
                 footer.style.bottom = "0";
@@ -152,28 +120,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", adjustFooter);
     adjustFooter(); // Run on page load
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-
-    // 🍔 Open Mobile Menu
-    hamburger.addEventListener("click", function () {
-        mobileMenu.classList.add("open");
-    });
-
-    // ✖ Close Mobile Menu
-    closeMenu.addEventListener("click", function () {
-        mobileMenu.classList.remove("open");
-    });
-
-    // ✅ Close Menu When Clicking a Link
-    document.querySelectorAll(".mobile-menu a").forEach(link => {
-        link.addEventListener("click", function () {
-            mobileMenu.classList.remove("open");
-        });
-    });
 });

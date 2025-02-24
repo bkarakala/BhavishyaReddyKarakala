@@ -1011,79 +1011,60 @@ html, body {
     background: forestgreen;
 }
 
-
-/* 🍔 Mobile Menu Styling */
-.hamburger {
-    display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-}
-
-/* 📱 Mobile Menu (Hidden by Default) */
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%; /* ✅ Initially Hidden Off-Screen */
-    width: 250px;
-    height: 100vh;
-    background: black;
-    padding: 20px;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
-    transition: right 0.3s ease-in-out; /* ✅ Smooth Slide Animation */
-    z-index: 1100;
-}
-
-/* ✅ Show Mobile Menu When Toggled */
-.mobile-menu.open {
-    right: 0;
-    display: flex;
-}
-
-/* 📌 Mobile Menu Links */
-.mobile-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.mobile-menu a:hover {
-    background: seagreen;
-    border-radius: 5px;
-}
-
-/* ❌ Close Button for Mobile Menu */
-.close-btn {
-    font-size: 30px;
-    color: white;
-    text-align: right;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-/* 📱 Show Hamburger Icon Only on Mobile */
+/* 📌 Hide Desktop Navbar on Mobile */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block; /* ✅ Show on Mobile */
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 1200;
-    }
-
     .nav-right {
-        display: none; /* ✅ Hide Desktop Menu on Mobile */
+        display: none; /* Hide desktop menu on mobile */
     }
 
+    /* 🍔 Show Hamburger Menu */
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    /* 📱 Mobile Menu - Initially Hidden */
     .mobile-menu {
-        width: 220px; /* Adjust Width */
-        right: -220px; /* Hidden Off-Screen */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: black;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    /* ✅ Show Mobile Menu when toggled */
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-menu a:hover {
+        background: seagreen;
+        border-radius: 5px;
     }
 }
+
+/* 📌 Ensure Desktop Navbar Always Visible on Large Screens */
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+

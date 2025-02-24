@@ -16,9 +16,9 @@
         </div>
     
         <!-- 🍔 Mobile Menu Toggle Button -->
-        <div class="hamburger" id="hamburger">&#9776;</div> <!-- ☰ Icon -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
     
-        <!-- 🖥️ Desktop Navigation -->
+        <!-- Desktop Navigation -->
         <ul class="nav-right">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -27,9 +27,8 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     
-        <!-- 📱 Mobile Menu (Initially Hidden) -->
+        <!-- 📱 Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
-            <div class="close-btn" id="close-menu">&times;</div> <!-- ✖ Close Button -->
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
@@ -37,7 +36,7 @@
             <a href="contact.html">Contact</a>
         </div>
     </header>
-    
+
 
     <section class="contact-container">
         <!-- Left Side: Contact Info -->
@@ -79,6 +78,16 @@
         </div>
     </section>
     
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("open");
+        }
+    </script>
+    
+
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
