@@ -95,12 +95,13 @@ header {
     color: seagreen;
 }
 
-/* Mobile Menu Toggle Button */
-.menu-toggle {
-    display: none;
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none; /* Hidden by default */
     font-size: 24px;
     color: white;
     cursor: pointer;
+    z-index: 1001;
 }
 
 /* Mobile Menu */
@@ -137,13 +138,14 @@ header {
     border-radius: 5px;
 }
 
+/* Close Button */
 .close-btn {
     font-size: 30px;
     color: white;
     cursor: pointer;
     position: absolute;
     top: 10px;
-    left: 20px;
+    right: 20px;
 }
 
 /* 📱 Mobile Navbar Adjustments */
@@ -159,11 +161,11 @@ header {
     }
 
     .nav-right {
-        display: none;
+        display: none; /* Hide desktop navigation */
     }
 
-    .menu-toggle {
-        display: block;
+    .hamburger {
+        display: block; /* Show hamburger menu */
     }
 
     .mobile-menu {
@@ -1087,7 +1089,7 @@ html, body {
     cursor: pointer;
     position: absolute;
     top: 10px;
-    left: 20px;
+    right: 20px;
 }
 
 /* ✅ Ensure Desktop Navbar Always Visible */
