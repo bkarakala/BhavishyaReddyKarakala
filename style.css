@@ -1091,12 +1091,11 @@ html, body {
     .close-btn {
         font-size: 30px;
         color: white;
-        text-align: right;
         cursor: pointer;
-        display: block;
+        position:absolute;
         padding: 15px;
-        top: 15px;
-        left: 20px;
+        top: 10px;
+        right: 20px;
         z-index:1201;
     }
     
