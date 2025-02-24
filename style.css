@@ -95,37 +95,28 @@ header {
     color: seagreen;
 }
 
-/* Hamburger Menu Icon */
-/* 📱 Show Hamburger Icon in Mobile */
-/* 📱 Show Hamburger Icon in Mobile */
+/* 🌟 Hamburger Menu Icon */
 .hamburger {
     display: none; /* Hidden by default */
     font-size: 24px;
     color: white;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    right: 20px; /* ✅ Adjusted from corner to beside name */
-    transform: translateY(-50%);
-    z-index: 1500;
+    margin-left: auto; /* Align to right */
+    padding: 10px;
 }
 
 /* 📱 Mobile View - Show Hamburger */
 @media (max-width: 768px) {
     .hamburger {
         display: block; /* Show the toggle */
+        position: absolute;
+        right: 20px; /* Position it properly */
+        top: 20px;
+        z-index: 1500;
     }
 
     .nav-right {
         display: none; /* Hide desktop menu */
-    }
-
-    /* 📌 Align name and hamburger in the same row */
-    .nav-left {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: space-between;
     }
 }
 
@@ -134,18 +125,18 @@ header {
     display: none;
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 80%; /* ✅ Adjusted width */
+    right: -100%;
+    width: 250px;
     height: 100vh;
     background: black;
     padding: 50px 20px;
-    text-align: center;
-    transition: left 0.3s ease-in-out;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
     z-index: 1200;
 }
 
 .mobile-menu.open {
-    left: 0; /* ✅ Slide from left instead of right */
+    right: 0;
     display: flex;
     flex-direction: column;
 }
@@ -156,33 +147,31 @@ header {
     color: white;
     cursor: pointer;
     position: absolute;
-    top: 15px;
-    left: 20px; /* ✅ Positioned inside the menu */
+    top: 10px;
+    right: 20px;
 }
 
 /* 📱 Mobile Menu Links */
 .mobile-menu a {
     color: white;
-    font-size: 20px;
-    padding: 15px;
     text-decoration: none;
+    padding: 10px;
     display: block;
+    text-align: center;
 }
 
 .mobile-menu a:hover {
-    background: #222;
+    background: seagreen;
     border-radius: 5px;
 }
 
-/* ✅ Ensure Desktop Navbar is Visible on Larger Screens */
+/* ✅ Ensure Desktop Navbar Always Visible */
 @media (min-width: 769px) {
-    .hamburger {
-        display: none; /* Hide the hamburger menu on larger screens */
-    }
     .mobile-menu {
         display: none !important;
     }
 }
+
 
 
 /* 🌟 Hero Section Styling */

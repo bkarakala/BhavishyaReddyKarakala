@@ -154,3 +154,70 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("JavaScript Loaded Successfully! 🚀");
+
+    // ========== 🏷️ Active Navigation Highlight ==========
+    const navLinks = document.querySelectorAll(".nav-right li a, .mobile-menu a");
+
+    function updateActiveLink() {
+        const currentPage = window.location.pathname.split("/").pop() || "index.html"; // Default to home page if empty
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    updateActiveLink(); // Run on page load
+
+    // ========== 🍔 Mobile Menu Toggle ==========
+    const hamburger = document.querySelector(".hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.querySelector(".close-btn");
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener("click", function () {
+            mobileMenu.classList.toggle("open");
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll(".mobile-menu a").forEach(link => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("open");
+            });
+        });
+
+        // Close menu when clicking the X button
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                mobileMenu.classList.remove("open");
+            });
+        }
+    }
+
+    // ========== 🌟 Smooth Scrolling for All Links ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1); // Remove "#"
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Adjust scroll position
+                    behavior: "smooth" // Smooth scrolling effect
+                });
+            }
+
+            // Close the mobile menu after navigating (if open)
+            if (mobileMenu && mobileMenu.classList.contains("open")) {
+                mobileMenu.classList.remove("open");
+            }
+        });
+    });
+});
