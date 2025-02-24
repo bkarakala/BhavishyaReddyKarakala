@@ -69,7 +69,7 @@ header {
     padding: 0;
     margin-left: auto;
     display: flex;
-    gap: 35px;
+    gap: 11px;
 }
 
 /* Navbar Links */
@@ -726,43 +726,47 @@ html, body {
     justify-content: space-between;
     align-items: flex-start;
     gap: 50px;
-    margin-top: 30px;
-    flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
+    margin-top: 20px;
 }
 
-/* 📩 Contact Info (Left Side) */
+/* 📩 Contact Info */
 .contact-info {
     flex: 1;
     text-align: left;
-    min-width: 350px; /* Prevents shrinking on smaller screens */
 }
 
-/* 📌 Contact Header */
-.contact-info h2 {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-/* 📌 Contact Details (Email, LinkedIn) */
 .contact-info p {
     font-size: 18px;
+    margin: 10px 0;
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin: 10px 0;
+    gap: 10px;
 }
 
 /* 📌 Contact Icons */
 .contact-info i {
-    font-size: 22px;
+    font-size: 20px;
     color: seagreen;
-    transition: color 0.3s ease-in-out;
+    margin-right: 8px;
 }
 
-.contact-info i:hover {
-    color: forestgreen;
+/* 📩 Email & LinkedIn Link Styling */
+.contact-info a {
+    color: seagreen;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* 📜 Contact Text Alignment */
+.contact-info p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* 🔗 Contact Links */
@@ -774,19 +778,16 @@ html, body {
 
 .contact-info a:hover {
     text-decoration: underline;
-    color: forestgreen;
 }
 
-/* 📝 Contact Form (Right Side) */
+/* 📝 Contact Form */
 .contact-form {
     flex: 1;
     background: #FFFFFF;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     animation: fadeInForm 1.5s ease-in-out;
-    text-align: left;
-    min-width: 400px; /* Ensures proper width */
 }
 
 /* 🖋️ Form Inputs */
@@ -796,7 +797,7 @@ html, body {
 }
 
 .input-group label {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -806,8 +807,8 @@ html, body {
 .input-group textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid seagreen;
-    border-radius: 6px;
+    border: 1px solid seagreen;
+    border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -816,7 +817,7 @@ html, body {
 .input-group textarea:focus {
     outline: none;
     border-color: forestgreen;
-    box-shadow: 0 0 10px rgba(46, 139, 87, 0.3);
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
 }
 
 /* ✉️ Send Message Button */
@@ -824,11 +825,11 @@ html, body {
     display: inline-block;
     background: seagreen;
     color: white;
-    padding: 14px 24px;
+    padding: 12px 20px;
+    margin-top: 10px;
     text-decoration: none;
-    font-size: 18px;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 5px;
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
     border: none;
     cursor: pointer;
@@ -840,23 +841,19 @@ html, body {
     background: forestgreen;
 }
 
-/* 📱 FINAL MOBILE FIXES */
+/* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
         gap: 30px;
     }
 
     .contact-info {
         text-align: center;
-        width: 100%;
     }
 
     .contact-form {
         width: 100%;
-        min-width: unset;
         text-align: left;
     }
 
@@ -864,3 +861,148 @@ html, body {
         width: 100%;
     }
 }
+
+/* Send Message Button */
+
+
+
+.btn-send {
+    display: inline-block;
+    background: seagreen; /* Sea Green Accent */
+    color: white;
+    padding: 12px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-send:hover {
+    transform: scale(1.05);
+    background: forestgreen; /* Darker Sea Green */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* 🎯 Contact Section Layout */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;  /* Space between sections */
+    padding: 50px 10%;
+}
+
+/* 📩 Contact Info Styling */
+.contact-info {
+    flex: 1;  /* Takes half the space */
+    text-align: left;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 📨 Icons Styling */
+.contact-info i {
+    font-size: 20px;
+    color: seagreen;
+}
+
+/* 🔗 Contact Links */
+.contact-info a {
+    color: seagreen;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* 📩 Contact Form Styling */
+.contact-form {
+    flex: 1;  /* Takes half the space */
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInForm 1.5s ease-in-out;
+}
+
+/* 📝 Form Inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid seagreen;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: forestgreen;
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+}
+
+/* ✉️ Send Message Button */
+.btn-send {
+    display: inline-block;
+    background: seagreen;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-send:hover {
+    transform: scale(1.05);
+    background: forestgreen;
+}
+
+
+
