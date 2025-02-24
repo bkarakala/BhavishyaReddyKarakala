@@ -128,6 +128,31 @@ function toggleMenu() {
 }
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("JavaScript Loaded Successfully! 🚀");
+
+    // Toggle Mobile Menu
+    function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("open");
+    }
+
+    // Attach event listener to the hamburger icon
+    const hamburger = document.querySelector(".hamburger");
+    if (hamburger) {
+        hamburger.addEventListener("click", toggleMenu);
+    }
+
+    // Close menu when clicking a link inside mobile menu
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+        link.addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.remove("open");
+        });
+    });
+});
+
+
 // Close menu and navigate smoothly when clicking a link
 document.querySelectorAll(".mobile-menu a").forEach(link => {
     link.addEventListener("click", function(event) {

@@ -1024,12 +1024,12 @@ html, body {
     display: block;
     padding: 10px;
     margin-bottom: 10px;
-}/* 🍔 Hide Mobile Menu by Default */
+}/* 🍔 Hide Mobile Menu by Default *//* 🍔 Mobile Menu */
 .mobile-menu {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 250px;
     height: 100vh;
     background: black;
@@ -1039,9 +1039,11 @@ html, body {
     z-index: 1200;
 }
 
-/* ✅ Show Menu When Open */
+/* ✅ Show menu when toggled */
 .mobile-menu.open {
-    display: block;
+    right: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ❌ Close Button */
@@ -1050,30 +1052,27 @@ html, body {
     color: white;
     cursor: pointer;
     position: absolute;
-    padding: 15px;
     top: 10px;
-    right: 20px;
+    left: 20px; /* Move X to left inside menu */
 }
 
 /* 📱 Mobile Menu Links */
-.mobile-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.mobile-menu li {
-    padding: 15px;
-    text-align: center;
-}
-
 .mobile-menu a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    padding: 10px;
     display: block;
+    text-align: center;
 }
 
 .mobile-menu a:hover {
     background: seagreen;
     border-radius: 5px;
+}
+
+/* ✅ Ensure Desktop Navbar Always Visible */
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;
+    }
 }
