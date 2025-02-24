@@ -97,12 +97,17 @@ header {
 
 /* Hamburger Menu Icon */
 /* 📱 Show Hamburger Icon in Mobile */
+/* 📱 Show Hamburger Icon in Mobile */
 .hamburger {
     display: none; /* Hidden by default */
     font-size: 24px;
     color: white;
     cursor: pointer;
-    margin-left: 12px;
+    position: absolute;
+    top: 50%;
+    right: 20px; /* ✅ Adjusted from corner to beside name */
+    transform: translateY(-50%);
+    z-index: 1500;
 }
 
 /* 📱 Mobile View - Show Hamburger */
@@ -114,6 +119,14 @@ header {
     .nav-right {
         display: none; /* Hide desktop menu */
     }
+
+    /* 📌 Align name and hamburger in the same row */
+    .nav-left {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
 /* 📱 Mobile Menu */
@@ -121,68 +134,56 @@ header {
     display: none;
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 250px;
+    left: -100%;
+    width: 80%; /* ✅ Adjusted width */
     height: 100vh;
     background: black;
     padding: 50px 20px;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
-    transition: right 0.3s ease-in-out;
+    text-align: center;
+    transition: left 0.3s ease-in-out;
     z-index: 1200;
 }
 
 .mobile-menu.open {
-    right: 0;
+    left: 0; /* ✅ Slide from left instead of right */
     display: flex;
     flex-direction: column;
 }
 
-.mobile-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    text-align: center;
-}
-
-.mobile-menu a:hover {
-    background: seagreen;
-    border-radius: 5px;
-}
-
+/* ❌ Close Button */
 .close-btn {
     font-size: 30px;
     color: white;
     cursor: pointer;
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 15px;
+    left: 20px; /* ✅ Positioned inside the menu */
 }
 
-/* 📱 Mobile Navbar Adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        align-items: center;
-        padding: 12px 20px;
-    }
+/* 📱 Mobile Menu Links */
+.mobile-menu a {
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+}
 
-    .nav-left {
-        margin-bottom: 0;
-    }
+.mobile-menu a:hover {
+    background: #222;
+    border-radius: 5px;
+}
 
-    .nav-right {
-        display: none; /* Hide desktop navigation */
-    }
-
+/* ✅ Ensure Desktop Navbar is Visible on Larger Screens */
+@media (min-width: 769px) {
     .hamburger {
-        display: block; /* Show hamburger menu */
+        display: none; /* Hide the hamburger menu on larger screens */
     }
-
     .mobile-menu {
-        display: flex;
+        display: none !important;
     }
 }
+
 
 /* 🌟 Hero Section Styling */
 .hero {

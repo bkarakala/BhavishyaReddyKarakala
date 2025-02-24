@@ -20,10 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    if (hamburger && mobileMenu) {
-        hamburger.addEventListener("click", function () {
+    function toggleMenu() {
+        if (mobileMenu) {
             mobileMenu.classList.toggle("open");
-        });
+        }
+    }
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener("click", toggleMenu);
 
         // Close mobile menu when clicking a link
         document.querySelectorAll(".mobile-menu a").forEach(link => {
@@ -32,6 +36,20 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // ✅ Ensure Hamburger Icon is Properly Positioned for Mobile
+    function adjustMobileNavbar() {
+        if (window.innerWidth <= 768) {
+            hamburger.style.display = "block"; // Ensure visible on mobile
+            hamburger.style.position = "absolute";
+            hamburger.style.top = "15px";
+            hamburger.style.right = "20px"; // Adjust placement beside the name
+            hamburger.style.fontSize = "24px";
+        }
+    }
+
+    window.addEventListener("resize", adjustMobileNavbar);
+    adjustMobileNavbar(); // Run on page load
 
     // ========== 🎬 Skills Pop-in & Pop-out Animation ==========
     const skills = document.querySelectorAll(".skills-grid span");
