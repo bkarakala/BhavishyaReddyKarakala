@@ -18,18 +18,21 @@ body {
 }
 
 @keyframes moveBg {
-    0% { background-position: center top; }
-    100% { background-position: center bottom; }
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
 }
 
 /* Navigation Bar */
-/* 📌 Fixed Navbar */
 header {
     background: #000000;
-    padding: 14px 40px;
+    padding: 14px 20px; /* Adjusted for mobile */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between elements */
     position: fixed;
     width: 100%;
     top: 0;
@@ -64,9 +67,9 @@ header {
 .nav-right {
     list-style: none;
     padding: 0;
-    margin-left: auto;
-    display: flex;
-    gap: 11px;
+    display: flex; /* Keep display as flex for horizontal layout */
+    margin-left: auto; /* Push navbar to the right */
+    gap: 11px; /* Space between links */
 }
 
 /* Navbar Links */
@@ -74,13 +77,8 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 12px 20px;
+    padding: 12px 20px; /* Padding for better click area */
     transition: color 0.3s ease-in-out;
-}
-
-/* Fix Contact Visibility */
-.nav-right li:last-child a {
-    padding-right: 50px;
 }
 
 /* Active Link */
@@ -92,48 +90,28 @@ header {
 
 /* Hover Effect */
 .nav-right li a:hover {
-    color: seagreen;
+    color: seagreen; /* Change color on hover */
 }
 
 /* 📱 Mobile Navbar Adjustments */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack name with picture on top */
+        flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center align content */
-        padding: 12px 20px; /* Responsive padding */
-    }
-
-    .nav-left {
-        margin-bottom: 10px; /* Space between the name and nav items */
-        display: flex; /* Ensure it remains a flex container */
-        align-items: center; /* Center items vertically */
-    }
-
-    .profile-pic {
-        width: 45px; /* Keep profile picture consistent */
-        height: 45px;
-        border-radius: 50%; /* Keeping it circular */
-        margin-right: 12px; /* Space between pic and name */
-    }
-
-    .logo-text {
-        font-size: 20px; /* Keep the font size for the name */
-        color: white;
-        font-weight: bold; /* Optionally bold */
+        padding: 10px 20px; /* Responsive padding */
     }
 
     .nav-right {
         justify-content: center; /* Center the nav items */
-        gap: 20px; /* Space between nav items */
-        display: flex; /* Ensure nav items are horizontally aligned */
-        width: 100%; /* Set to 100% for full width */
-        margin-top: 10px; /* Add space above navigation */
+        gap: 10px; /* Space between items */
+        width: 100%; /* Full width */
+        margin-top: 10px; /* Space above the navigation */
+        flex-wrap: nowrap; /* Don't wrap items */
     }
 
-    /* Ensure the navbar items do not wrap */
-    .nav-right li {
-        flex: 1; /* Flex one item to share the space */
-        text-align: center; /* Center the text in each nav item */
+    /* Make the logo and profile picture slightly larger on mobile */
+    .nav-left {
+        margin-bottom: 10px; /* Space between name and nav items */
     }
 }
 
@@ -158,100 +136,16 @@ header {
     letter-spacing: 2px;
     display: inline-block; /* Ensures proper rendering */
     margin-bottom: 15px;
-    position: relative; /* Allows pseudo-elements if needed */
-    
-    /* 🔥 Gradient Text Effect */
-    background: linear-gradient(90deg, #007BFF, #0056b3);  /* Sky Blue Gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-
-    /* ✨ Text Shadow for Extra Glow */
-    text-shadow: 4px 4px 15px rgba(0, 123, 255, 0.6);
-}
-
-/* 🔄 Fallback for Browsers That Don't Support Gradient Text */
-@supports not (-webkit-background-clip: text) {
-    .hero-title {
-        color: #007BFF; /* Solid Sky Blue Fallback */
-    }
-}
-
-/* 🎬 Smooth Fade-in Animation */
-.hero-title {
-    animation: fadeIn 1.2s ease-in-out, textGlow 1.5s infinite alternate ease-in-out;
-}
-
-/* 💡 Keyframe Animation for Fading Effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ✨ Keyframe Animation for Glowing Text Effect */
-@keyframes textGlow {
-    from {
-        text-shadow: 2px 2px 10px rgba(0, 123, 255, 0.5);
-    }
-    to {
-        text-shadow: 4px 4px 20px rgba(0, 86, 179, 0.7);
-    }
-}
-
-/* 📱 Responsive Fix for Mobile */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 36px; /* Reduce font size for mobile */
-        text-align: center;
-        line-height: 1.2;
-        margin-top: 20px; /* Add spacing from the top */
-    }
-    
-    /* Adjust Shadow for Mobile */
-    @keyframes textGlow {
-        from {
-            text-shadow: 1px 1px 8px rgba(0, 123, 255, 0.5);
-        }
-        to {
-            text-shadow: 2px 2px 15px rgba(0, 86, 179, 0.7);
-        }
-    }
 }
 
 /* 📜 Hero Description */
 .hero-description {
     font-size: 18px;
     font-weight: 500;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #fe08f2; /* Dodger Blue for high contrast */
-    text-shadow: 1px 1px 5px rgba(30, 144, 255, 0.3);
-    text-align: center; /* Ensures alignment on all screens */
+    text-align: center; /* Ensures alignment */
 }
 
-/* 🔹 Highlighted Keywords */
-.hero-description strong {
-    color: #fe08f2; /* Deep Sky Blue */
-    font-weight: bold;
-}
-
-/* 📱 Responsive Fix for Mobile */
-@media (max-width: 768px) {
-    .hero-description {
-        font-size: 16px; /* Slightly smaller font for mobile */
-        line-height: 1.4;
-        padding: 0 5%;
-        text-align: center;
-    }
-}
-
-/* 🚀 Button Styling */
+/* Button Styling */
 .btn {
     display: inline-block;
     background: #ff9d00; /* Tomato Red */
@@ -265,57 +159,37 @@ header {
     box-shadow: 0 4px 10px rgba(255, 71, 249, 0.3);
 }
 
-/* 🔥 Hover Effect */
-.btn:hover {
-    transform: scale(1.05);
-    background: #ff9d00;
-    box-shadow: 0 0 15px rgba(255, 71, 249, 0.3);
+/* Footer */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
 }
 
-/* 🎨 Updated Resume Button */
-.btn-secondary {
-    background: #ff9d00; /* Same as Projects Button */
-}
-
-.btn-secondary:hover {
-    background: #ff9d00;
-}
-
-/* 📱 Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero {
-        padding: 20px; /* Add padding for mobile */
-        text-align: center; /* Center text for mobile */
+/* 🎨 Fade-in Animation */
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
-
-    .hero-title {
-        font-size: 36px; /* Adjusted for mobile */
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center; /* Center buttons on mobile */
-    }
-
-    .btn {
-        width: 90%; /* Full width for buttons */
-        padding: 12px; /* Padding adjustment */
-        font-size: 16px;
-        text-align: center; /* Center text in buttons */
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* 🔄 Fade-In Animation */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* 🌟 Active Menu Item */
-.nav-right li a.active {
-    color: seagreen;
-    border-bottom: 3px solid seagreen;
+/* Animations */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 🏆 About Section */
