@@ -94,78 +94,60 @@ header {
 .nav-right li a:hover {
     color: seagreen;
 }
-/* 📱 Mobile View - Show Hamburger */
-/* 📱 Mobile View - Show Hamburger Below Name */
-@media (max-width: 768px) {
-    .nav-left {
-        display: flex;
-        flex-direction: column; /* Stack elements */
-        align-items: center;
-        text-align: center;
-    }
 
-    .logo-text {
-        margin-bottom: 5px; /* Add spacing between name and toggle */
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .nav-right {
+        display: none; /* Hide desktop menu */
     }
 
     .hamburger {
         display: block;
-        font-size: 24px;
-        color: white;
+        font-size: 28px;
         cursor: pointer;
-        margin-top: 5px; /* Move below the name */
-        z-index: 1500;
+        color: white;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1001;
     }
 
-    .nav-right {
-        display: none; /* Hide desktop menu */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: black;
+        text-align: center;
+        flex-direction: column;
+        z-index: 1000;
+        padding-top: 50px;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: white;
+        font-size: 22px;
+        margin: 15px 0;
+        display: block;
+        text-decoration: none;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
     }
 }
 
-/* 📱 Mobile Menu */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: -100%; /* Move it from left instead of right */
-    width: 250px;
-    height: 100vh;
-    background: black;
-    padding: 50px 20px;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
-    transition: left 0.3s ease-in-out; /* Change transition to left */
-    z-index: 1200;
-}
-
-.mobile-menu.open {
-    left: 0; /* Show from the left */
-    display: flex;
-    flex-direction: column;
-}
-
-/* ❌ Close Button */
-.close-btn {
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 20px; /* Move close button to left */
-}
-
-/* 📱 Mobile Menu Links */
-.mobile-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    text-align: center;
-}
-
-.mobile-menu a:hover {
-    background: seagreen;
-    border-radius: 5px;
-}
 
 
 

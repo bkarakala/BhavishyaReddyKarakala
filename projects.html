@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-<!-- ✅ Header Section (Fixing Duplicate Issue) -->
+<!-- ✅ Header Section -->
 <header>
     <div class="nav-left">
         <img src="images/profilepicture.jpeg" alt="Profile" class="profile-pic">
@@ -19,8 +18,6 @@
 
     <!-- 🍔 Mobile Menu Toggle Button -->
     <div class="hamburger" onclick="toggleMenu()">☰</div>
-    </div></div> == $0
-
 
     <!-- 🖥️ Desktop Navigation -->
     <ul class="nav-right">
@@ -30,76 +27,69 @@
         <li><a href="experience.html">Experience</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
-
-    <!-- 📱 Mobile Navigation Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <span class="close-btn" onclick="toggleMenu()">✖</span>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="contact.html">Contact</a>
-    </div>
 </header>
 
-    <!-- 🏆 Projects Section -->
-    <section class="projects">
-        <h1>My Projects</h1>
-        <div class="projects-container">
-            <div class="project">
-                <img src="images/Hospital.png" alt="Hospital Management System">
-                <h3>Hospital Management System</h3>
-                <p>
-                    This is a <strong>full-stack hospital management system</strong> built with 
-                    <strong>ASP.NET Core, SQL Server, and React.js</strong>. It allows seamless patient 
-                    registration, doctor appointment scheduling, and efficient billing and records management.
-                </p>
-                <a href="https://github.com/bkarakala/HospitalManagementSystem" target="_blank" class="btn">View Code</a>
-            </div>
+<!-- 📱 Mobile Navigation Menu -->
+<div class="mobile-menu" id="mobile-menu">
+    <span class="close-btn" onclick="toggleMenu()">✖</span>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
+</div>
 
-            <div class="project">
-                <img src="images/BusBookingSystem.png" alt="Bus Booking Management System">
-                <h3>Bus Booking Management System</h3>
-                <p>
-                    A web-based platform that simplifies the process of reserving bus seats for scheduled routes,
-                    school transport, private hire, and tourist trips. Built with <strong>React.js, Node.js, and Express</strong>.
-                </p>
-                <a href="https://github.com/bkarakala/BusBookingSystem.git" target="_blank" class="btn">View Code</a>
-            </div>
+<!-- 🏆 Projects Section -->
+<section class="projects">
+    <h1>My Projects</h1>
+    <div class="projects-container">
+        <div class="project">
+            <img src="images/Hospital.png" alt="Hospital Management System">
+            <h3>Hospital Management System</h3>
+            <p>
+                This is a <strong>full-stack hospital management system</strong> built with 
+                <strong>ASP.NET Core, SQL Server, and React.js</strong>. It allows seamless patient 
+                registration, doctor appointment scheduling, and efficient billing and records management.
+            </p>
+            <a href="https://github.com/bkarakala/HospitalManagementSystem" target="_blank" class="btn">View Code</a>
         </div>
-    </section>
 
-    <!-- ✅ JavaScript: Mobile Menu Functionality -->
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector(".mobile-menu");
-            menu.classList.toggle("open");
-        }
+        <div class="project">
+            <img src="images/BusBookingSystem.png" alt="Bus Booking Management System">
+            <h3>Bus Booking Management System</h3>
+            <p>
+                A web-based platform that simplifies the process of reserving bus seats for scheduled routes,
+                school transport, private hire, and tourist trips. Built with <strong>React.js, Node.js, and Express</strong>.
+            </p>
+            <a href="https://github.com/bkarakala/BusBookingSystem.git" target="_blank" class="btn">View Code</a>
+        </div>
+    </div>
+</section>
 
-        // Close menu and navigate smoothly when clicking a link
-        document.querySelectorAll(".mobile-menu a").forEach(link => {
-            link.addEventListener("click", function(event) {
-                event.preventDefault(); // Prevent default jump
-                const targetPage = this.getAttribute("href");
+<!-- 🏁 Footer -->
+<footer>
+    <p>© Copyright 2024 Bhavishya Reddy Karakala. All Rights Reserved.</p>
+    <div class="social-icons">
+        <a href="mailto:bhavireddyk08@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/bhavishya-reddy-karakala/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/bkarakala"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
 
-                // Navigate to the correct page
-                window.location.href = targetPage;
+<!-- ✅ JavaScript (Fixed Toggle Issue) -->
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("open");
+    }
 
-                // Close the menu after clicking
-                document.querySelector(".mobile-menu").classList.remove("open");
-            });
+    // Close menu when clicking a link (for better UX)
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+        link.addEventListener("click", function () {
+            document.getElementById("mobile-menu").classList.remove("open");
         });
-    </script>
-
-    <!-- 🏁 Footer -->
-    <footer>
-        <p>© Copyright 2024 Bhavishya Reddy Karakala. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="mailto:bhavireddyk08@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/bhavishya-reddy-karakala/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/bkarakala"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
+    });
+</script>
 
 </body>
 </html>
