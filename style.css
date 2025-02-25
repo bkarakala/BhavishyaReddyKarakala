@@ -362,18 +362,23 @@ header {
 }
 
 /* 🏆 About Section */
+/* 🏆 About Section */
 .about {
     padding: 80px 10%;
     text-align: center;
     background: #FFFFFF;
     animation: fadeInContent 1.5s ease-in-out;
-    margin-top: 80px;
+    margin-top: 0; /* 🔥 Removed extra space */
 }
 
-.about h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: black;
+.about-text h2,
+.skills-container h2 {
+    margin-top: 0; /* Removes extra space above headers */
+}
+
+.about-text h1,
+.skills-container h1 {
+    margin-top: 0; /* Removes extra space above headers */
 }
 
 /* 📌 About Container */
@@ -468,13 +473,15 @@ header {
 }
 
 /* 🌟 Experience Section */
+
 .experience {
-    padding: 80px 10%;
+    padding: 60px 10%; /* Reduce padding from 80px to 60px */
     background: #f8f9fa;
     text-align: center;
     position: relative;
-    margin-top: 80px;
+    margin-top: 0; /* 🔥 Removes the extra space above */
 }
+
 
 /* 🔥 Experience Title */
 .section-title {
@@ -804,7 +811,7 @@ html, body {
     background: white;
     animation: fadeInContent 1.5s ease-in-out;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
 /* 📌 Contact Container */
