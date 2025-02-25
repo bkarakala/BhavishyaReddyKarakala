@@ -95,12 +95,25 @@ header {
     color: seagreen;
 }
 /* 📱 Mobile View - Show Hamburger */
+/* 📱 Mobile View - Show Hamburger Below Name */
 @media (max-width: 768px) {
+    .nav-left {
+        display: flex;
+        flex-direction: column; /* Stack elements */
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-text {
+        margin-bottom: 5px; /* Add spacing between name and toggle */
+    }
+
     .hamburger {
-        display: block; /* Show the toggle */
-        position: absolute;
-        left: 20px; /* Move it to the left */
-        top: 15px;
+        display: block;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        margin-top: 5px; /* Move below the name */
         z-index: 1500;
     }
 
@@ -153,6 +166,7 @@ header {
     background: seagreen;
     border-radius: 5px;
 }
+
 
 
 /* ✅ Ensure Desktop Navbar Always Visible */
